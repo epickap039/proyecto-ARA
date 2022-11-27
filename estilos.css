@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;1,200;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;1,200;1,400;1,700&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;;
+    background-color: rgb(16, 14, 14);
+}
+
+h1 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #424949;
+    text-align: center;
+    font-family: 'Rajdhani', 'Times New Roman', Times, serif;
+    background-color: #F4D03F;
+    padding: auto;
+    font-size: 70px;
+}
+
+h2, h3 {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.menu {
+    text-align: right;
+    font-size: 20px;
+    padding-bottom: 20px;
+    line-height: 30px;
+    color: white;
+}
+
+#logoara {
+display: block;
+margin: 0;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 60px;
+    text-align: justify;
+    color: white;
+}
+
+.contac {
+    color: azure;
+}
+
+.lista {
+    color: azure;
+    padding-left: 40px;
+    line-height: 30px;
+}
+
+.video {
+    background-color: #424949;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
