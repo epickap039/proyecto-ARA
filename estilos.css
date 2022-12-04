@@ -1,25 +1,55 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;1,200;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;1,200;1,400;1,700&family=Rajdhani:wght@300;400;600;700&display=swap');
 
 * {
     margin: 0;
-    padding: 0;;
-    background-color: rgb(16, 14, 14);
+    padding: 0;
 }
 
-h1 {
+.logo2 h1 {
     padding-top: 40px;
-    padding-bottom: 40px;
-    color: #424949;
-    text-align: center;
+    color: #FFEFD6;
+    text-align: left;
     font-family: 'Rajdhani', 'Times New Roman', Times, serif;
-    background-color: #F4D03F;
-    padding: auto;
-    font-size: 70px;
+    background-color: #3A8891;
+    padding: 20px;
+    font-size: 40px;
+
+
 }
 
-h2, h3 {
+.nav_barra {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    background-color: #0E5E6F;
+    padding: 12px;
+    border: none;
+    justify-content: flex-end;
+}
+
+.nav_item {
+    font-family: 'Rajdhani', 'Times New Roman', Times, serif;
+    flex-grow: 1; /*aun probando las proporciones */
+    text-align: center;
+}
+
+.nav_item a {   
+    color: #FFEFD6;
+    
+}
+.nav_item p {
+    font-family: 'Rajdhani', 'Times New Roman', Times, serif;
+    color: #FFEFD6;
+    padding: 0;
+    border: none;
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+h2,
+h3 {
     padding-top: 20px;
     padding-left: 15px;
     padding-bottom: 20px;
@@ -37,16 +67,13 @@ h2, h3 {
 }
 
 #logoara {
-display: block;
-margin: 0;
+    display: block;
+    margin: 0;
 }
 
 p {
     font-family: 'Nunito', sans-serif;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 60px;
+    padding: 12px;
     text-align: justify;
     color: white;
 }
