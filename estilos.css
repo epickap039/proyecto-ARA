@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Rajdhani', 'Times New Roman', Times, serif;
+    /*temporal*/
 }
 
 .logo2 h1 {
@@ -15,31 +17,40 @@
     background-color: #3A8891;
     padding: 20px;
     font-size: 40px;
-
+}
+.logo2:hover{
+    transform: scale(1.1);
 }
 
 .nav_barra {
     display: flex;
-    gap: 1rem;
     list-style: none;
+    gap: 2rem;
     background-color: #0E5E6F;
     padding: 12px;
     border: none;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: right;
     flex-wrap: wrap;
     /* position: sticky;*/
 }
 
 .nav_item {
     font-family: 'Rajdhani', 'Times New Roman', Times, serif;
-    text-align: left;
     font-size: 20px;
 }
 
 .nav_item a {
     color: #FFEFD6;
+    text-decoration: none;
+}
 
+.nav_item a:hover{
+    background-color: #3A8891;
+    color: aqua;
+}
+.nav_item p:hover{
+    background-color:#3A8891;
+    color:aqua;
 }
 
 .nav_item p {
@@ -57,14 +68,17 @@
     width: 100%;
 }
 
-.solagan {
+.slogan {
     background-image: url(/imagenes/inteligencia-artificial-cc.jpg);
-
-    bottom: 50px;
+    background-size: cover;
+    height: 640px;
+    color: #ffffff;
+    font-size: 80px;
+    padding-top: 20%;
 }
 
 .textgrid {
-    background-color: #3A8891;
+    background-color: #ffffff;
     font-family: 'Rajdhani', 'Times New Roman', Times, serif;
     display: grid;
     gap: 0.5rem;
@@ -94,40 +108,50 @@
 .bienvenidogrid {
     background-color: #FFEFD6;
     padding: 2rem;
-    height: 200px;
+    height: 300px;
 }
 
 .quehacemosgrid {
     background-color: #FFEFD6;
 
     padding: 2rem;
-    height: 200px;
+    height: 300px;
 
 }
 
 
 .listagrid {
     background-color: #F2DEBA;
-
     padding: 2rem;
-    height: 200px;
+    height: 300px;
 }
 
 .serviciogrid {
     background-color: #F2DEBA;
-
     padding: 2rem;
-    height: 200px;
+    height: 300px;
 }
+
+
+.tituloproyectos {
+    font-family: 'Rajdhani', 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: #000000;
+}
+
 
 .galeria {
     display: grid;
     gap: 1rem;
     grid-template-areas:
         'im1 im2'
-        'im3 im4';
-    background-color: #3A8891;
+        ' im3 im4';
+    background-color: #F2DEBA;
     text-align: center;
+    padding: 10px;
+    grid-row: auto;
 
 }
 
@@ -148,55 +172,48 @@
 }
 
 .imagengrid {
-    overflow: auto;
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: #F2DEBA;
+    background-color: #ffffff;
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .imagengrid1 {
-    overflow: auto;
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: #F2DEBA;
+    background-color: #ffffff;
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .imagengrid2 {
-    overflow: auto;
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: #F2DEBA;
+    background-color: #ffffff;
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .imagengrid3 {
-
-    overflow: auto;
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: #F2DEBA;
-}
-.mainclass{
-    margin: 0%;
-    border: 0%;
-    padding: 0%;
+    background-color: #ffffff;
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
-.imgslogan {
-    display: inline-block;
-}
-
-h3 {
-    position: relative;
-    top: 100px;
-    left: 100px;
-    color: aliceblue;
-}
 
 .videogrid {
-    background-color: #FFEFD6;
+    align-items: center;
     border-radius: 1rem;
     padding: 2rem;
     size: auto;
+
 }
 
 p {
@@ -206,7 +223,6 @@ p {
     color: rgb(0, 0, 0);
 }
 
-
 .contac {
     color: rgb(5, 6, 6);
 }
@@ -214,5 +230,14 @@ p {
 .lista {
     color: rgb(2, 3, 3);
     padding-left: 40px;
-    line-height: 30px;
+    line-height: 20px;
+}
+
+.contantanosflex {
+    background-color: #0E5E6F;
+    border: 1px solid;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
 }
