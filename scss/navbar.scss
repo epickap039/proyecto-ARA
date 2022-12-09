@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.header {
+    background-color: $negro;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem 2rem;
+    @include items-content;
+
+    .logo {
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        a {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: $blancobeishe;
+            text-decoration: none;
+            font-size: $letragrande;
+            transition: all 0.3s;
+            flex-grow: 3;
+            align-self: flex-start;
+            list-style: none;
+
+            &:hover {
+                color: $azulcian;
+            }
+        }
+    }
+
+    .barra_de_navegacion {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            padding: 0 1rem;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        a {
+            font-size: $letramediana;
+            text-decoration: none;
+            color: $blancobeishe;
+
+            &:hover {
+                color: $azulcian;
+            }
+        }
+
+    }
+
+    .busqueda {
+        flex-grow: 2;        
+    }
+}
+.btn_busqueda {
+    button {
+        padding: .5em 1em;
+        background: $blancobeishe;
+        border: none;
+        border-radius: 50px;
+        flex-grow: 1;
+        color: $azulcian;
+        cursor: pointer;
+        transition: all 0.3 ease 0s;
+
+        &:hover {
+            background-color: $negromate;
+            color: $negro;
+
+        }
+    }
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.navi{
+    background-image: url(/imagenes/banner2.jpg);
+    height: 20em;
+    .textosobreimagen{
+        h1{
+            position: relative;
+            top: 2.7em;
+            left: 8em;
+            color: $blancobeishe;
+            font-size: 3em;
+
+        }
+    }
+}

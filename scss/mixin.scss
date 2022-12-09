@@ -1,0 +1,16 @@
+@mixin items-content{
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin itemscards{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 70% 15%;
+    justify-items: center;
+    list-style: none;
+    min-width: 300px;
+    gap: 1rem;
+    background-color: #00ADB5;
+    padding: 2rem; 
+}
