@@ -76,7 +76,7 @@
     padding: 1em;
     text-align: justify;
     min-width: 300px;
-    min-height:auto;
+    min-height: auto;
 }
 
 .item1 {
@@ -104,4 +104,26 @@
 
 .item5 {
     @extend .item1;
+}
+
+.quienesSomos {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto;
+
+    h1 h2{
+        padding: 10px;
+    }
+
+    p {
+        padding: 2%;
+        text-align: justify;
+        width: 70%;
+    }
+
+    img {
+        @extend p;
+    }
+
 }

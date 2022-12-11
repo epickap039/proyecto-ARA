@@ -4,7 +4,7 @@
     border-style: solid;
     border-color: $negro;
 
-    iframe{
+    iframe {
         padding: 20px;
         min-height: 400px;
     }
@@ -18,12 +18,35 @@
         font-size: $letragrande;
     }
 }
-.contanctanos{
-    padding: 2%;
+
+.contanctanos {
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: 2em;
+    align-items: center;
+    padding: 1%;
     align-items: center;
     justify-content: center;
-    p{
-font-size: $letragrande;
+
+
+    p {
+        font-size: $letragrande;
         color: $blancobeishe;
+        padding: .5em;
+
+    }
+
+    label {
+        @extend p;
+        font-size: $letramediana;
+
+    }
+
+    h2 {
+        @extend label;
+    }
+
+    .btn_busqueda{
+        padding: 1em;
     }
 }

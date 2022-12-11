@@ -170,6 +170,20 @@
   object-fit: cover;
 }
 
+.quienesSomos {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto;
+}
+.quienesSomos h1 h2 {
+  padding: 10px;
+}
+.quienesSomos p, .quienesSomos .contanctanos label, .quienesSomos .contanctanos h2, .contanctanos .quienesSomos label, .contanctanos .quienesSomos h2, .quienesSomos img {
+  padding: 2%;
+  text-align: justify;
+  width: 70%;
+}
 .mapa {
   background-color: rgb(57, 62, 70);
   border: 10px;
@@ -184,19 +198,30 @@
 .titulofooter {
   padding: 20px 20px;
 }
-.titulofooter p {
+.titulofooter p, .titulofooter .contanctanos label, .titulofooter .contanctanos h2, .contanctanos .titulofooter label, .contanctanos .titulofooter h2, .titulofooter .quienesSomos img, .quienesSomos .titulofooter img {
   color: rgb(238, 238, 238);
   font-size: 2em;
 }
 
 .contanctanos {
-  padding: 2%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 2em;
+  align-items: center;
+  padding: 1%;
   align-items: center;
   justify-content: center;
 }
-.contanctanos p {
+.contanctanos p, .contanctanos label, .contanctanos h2, .contanctanos .quienesSomos img, .quienesSomos .contanctanos img {
   font-size: 2em;
   color: rgb(238, 238, 238);
+  padding: 0.5em;
+}
+.contanctanos label, .contanctanos h2 {
+  font-size: 1.4em;
+}
+.contanctanos .btn_busqueda {
+  padding: 1em;
 }
 
 @media only screen and (max-width: 480px) {
@@ -244,7 +269,7 @@
     padding: 0%;
     min-height: 400px;
   }
-  .item1 p, .item2 p, .item3 p, .item4 p, .item5 p {
+  .item1 p, .item2 p, .item3 p, .item4 p, .item5 p, .item1 .quienesSomos img, .quienesSomos .item1 img, .item2 .quienesSomos img, .quienesSomos .item2 img, .item3 .quienesSomos img, .quienesSomos .item3 img, .item4 .quienesSomos img, .quienesSomos .item4 img, .item5 .quienesSomos img, .quienesSomos .item5 img, .item1 .contanctanos label, .contanctanos .item1 label, .item2 .contanctanos label, .contanctanos .item2 label, .item3 .contanctanos label, .contanctanos .item3 label, .item4 .contanctanos label, .contanctanos .item4 label, .item5 .contanctanos label, .contanctanos .item5 label, .item1 .contanctanos h2, .contanctanos .item1 h2, .item2 .contanctanos h2, .contanctanos .item2 h2, .item3 .contanctanos h2, .contanctanos .item3 h2, .item4 .contanctanos h2, .contanctanos .item4 h2, .item5 .contanctanos h2, .contanctanos .item5 h2 {
     margin-top: 10px;
     padding: 0;
     font-size: 24px;
@@ -260,6 +285,9 @@
   }
   .item1 .btn_busqueda, .item2 .btn_busqueda, .item3 .btn_busqueda, .item4 .btn_busqueda, .item5 .btn_busqueda {
     margin-bottom: 40px;
+  }
+  .quienesSomos p, .quienesSomos img, .quienesSomos .contanctanos label, .contanctanos .quienesSomos label, .quienesSomos .contanctanos h2, .contanctanos .quienesSomos h2 {
+    width: 100%;
   }
 }
 

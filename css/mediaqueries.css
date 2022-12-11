@@ -60,6 +60,9 @@
   .item1 .btn_busqueda, .item5 .btn_busqueda, .item4 .btn_busqueda, .item3 .btn_busqueda, .item2 .btn_busqueda {
     margin-bottom: 40px;
   }
+  .quienesSomos p {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=mediaqueries.css.map */
