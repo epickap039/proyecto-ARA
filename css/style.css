@@ -170,14 +170,45 @@
   object-fit: cover;
 }
 
+.mapa {
+  background-color: rgb(57, 62, 70);
+  border: 10px;
+  border-style: solid;
+  border-color: rgb(34, 40, 49);
+}
+.mapa iframe {
+  padding: 20px;
+  min-height: 400px;
+}
+
+.titulofooter {
+  padding: 20px 20px;
+}
+.titulofooter p {
+  color: rgb(238, 238, 238);
+  font-size: 2em;
+}
+
+.contanctanos {
+  padding: 2%;
+  align-items: center;
+  justify-content: center;
+}
+.contanctanos p {
+  font-size: 2em;
+  color: rgb(238, 238, 238);
+}
+
 @media only screen and (max-width: 480px) {
   .navi {
     height: 15em;
   }
-  .navi h1 {
+  .navi .textosobreimagen {
     position: relative;
+  }
+  .navi .textosobreimagen h1 {
     top: 1em;
-    font-size: 2em;
+    font-size: 3em;
   }
   .slider {
     width: auto;
@@ -196,7 +227,7 @@
     height: auto;
   }
   .tienda1 {
-    margin: 2em 1em;
+    margin: 0;
     display: grid;
     gap: 1em;
     grid-template-columns: 1fr;
@@ -205,7 +236,7 @@
   .item1, .item2, .item3, .item4, .item5 {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 70% 15%;
+    grid-template-rows: auto 60% 15%;
     justify-items: center;
     align-items: center;
     list-style: none;
@@ -214,7 +245,7 @@
     min-height: 400px;
   }
   .item1 p, .item2 p, .item3 p, .item4 p, .item5 p {
-    margin: 0;
+    margin-top: 10px;
     padding: 0;
     font-size: 24px;
     height: 20px;
@@ -226,6 +257,9 @@
     -webkit-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
     object-fit: cover;
+  }
+  .item1 .btn_busqueda, .item2 .btn_busqueda, .item3 .btn_busqueda, .item4 .btn_busqueda, .item5 .btn_busqueda {
+    margin-bottom: 40px;
   }
 }
 
