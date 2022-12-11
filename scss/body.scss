@@ -76,7 +76,7 @@
     padding: 1em;
     text-align: justify;
     min-width: 300px;
-    min-height: auto;
+    min-height:auto;
 }
 
 .item1 {
@@ -86,6 +86,7 @@
         box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
+        object-fit: cover;
     }
 }
 

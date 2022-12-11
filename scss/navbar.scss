@@ -11,6 +11,7 @@
     gap: 1em;
     flex-wrap: wrap;
     height: auto;
+    width: auto;
     padding: 1rem 2rem;
     @include items-content;
 
@@ -91,7 +92,6 @@
         h1{
             position: relative;
             top: 2.7em;
-            left: 8em;
             color: $blancobeishe;
             font-size: 3em;
 
