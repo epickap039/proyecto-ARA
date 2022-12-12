@@ -76,7 +76,7 @@
   background-image: url(/imagenes/banner2.jpg);
   height: 20em;
 }
-.navi .textosobreimagen h1 {
+.navi .textosobreimagen h1, .navi .textosobreimagen .quienesSomos h2, .quienesSomos .navi .textosobreimagen h2 {
   position: relative;
   top: 2.7em;
   color: rgb(238, 238, 238);
@@ -176,13 +176,13 @@
   justify-content: center;
   grid-template-columns: auto;
 }
-.quienesSomos h1 h2 {
-  padding: 10px;
+.quienesSomos h1, .quienesSomos h2 {
+  padding: 20px;
 }
 .quienesSomos p, .quienesSomos .contanctanos label, .quienesSomos .contanctanos h2, .contanctanos .quienesSomos label, .contanctanos .quienesSomos h2, .quienesSomos img {
   padding: 2%;
   text-align: justify;
-  width: 70%;
+  width: 100%;
 }
 .mapa {
   background-color: rgb(57, 62, 70);
@@ -231,7 +231,7 @@
   .navi .textosobreimagen {
     position: relative;
   }
-  .navi .textosobreimagen h1 {
+  .navi .textosobreimagen h1, .navi .textosobreimagen .quienesSomos h2, .quienesSomos .navi .textosobreimagen h2 {
     top: 1em;
     font-size: 3em;
   }

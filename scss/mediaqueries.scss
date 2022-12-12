@@ -5,10 +5,11 @@
         height: 15em;
 
         .textosobreimagen {
-            position:relative;
-            h1{
+            position: relative;
+
+            h1 {
                 top: 1em;
-                font-size: 3em;               
+                font-size: 3em;
             }
         }
     }
@@ -71,7 +72,8 @@
             -moz-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
             object-fit: cover;
         }
-        .btn_busqueda{
+
+        .btn_busqueda {
             margin-bottom: 40px;
         }
     }
@@ -93,8 +95,8 @@
     }
 
     .quienesSomos {
-p{
-    width: 100%;
-}
+        p {
+            width: 100%;
+        }
     }
 }

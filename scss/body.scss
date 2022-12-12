@@ -112,14 +112,17 @@
     justify-content: center;
     grid-template-columns: auto;
 
-    h1 h2{
-        padding: 10px;
+    h1{
+        padding: 20px;
+    }
+    h2{
+        @extend h1;
     }
 
     p {
         padding: 2%;
         text-align: justify;
-        width: 70%;
+        width: 100%;
     }
 
     img {
