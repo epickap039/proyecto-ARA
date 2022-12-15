@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/epickap039/proyecto-ARA/issues"
   },
-  "homepage": "https://github.com/epickap039/proyecto-ARA#readme"
+  "homepage": "https://github.com/epickap039/proyecto-ARA#readme",
+  "dependencies": {
+    "g": "^2.0.1"
+  }
 }
