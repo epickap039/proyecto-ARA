@@ -28,11 +28,11 @@ alert("quieres saber tu resultado?");
 if (eresBueno == "si") {
     bueno = 50;
     elsujetoes = "bueno";
-} else{
+} else {
     bueno = 10;
     elsujetoes = "malo";
 }
-var suma = (parseInt( cuantasVeces) + parseInt( bueno));
+var suma = (parseInt(cuantasVeces) + parseInt(bueno));
 alert("procesando 2.0 ...");
 
 var felicidades = `felicidades eres ${suma}% ${elsujetoes}`;
