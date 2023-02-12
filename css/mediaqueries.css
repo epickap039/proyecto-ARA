@@ -1,11 +1,9 @@
 @media only screen and (max-width: 480px) {
-  .navi {
+  .slogan {
     height: 15em;
-  }
-  .navi .textosobreimagen {
     position: relative;
   }
-  .navi .textosobreimagen h1 {
+  .slogan h1 {
     top: 1em;
     font-size: 3em;
   }
@@ -65,7 +63,7 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 481px) and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .navi {
     height: 15em;
   }
@@ -96,7 +94,7 @@
     margin: 0;
     display: grid;
     gap: 1em;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     grid-template-rows: auto;
   }
   p {

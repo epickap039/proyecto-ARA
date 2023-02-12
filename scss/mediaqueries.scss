@@ -1,17 +1,18 @@
+@import "variables";
 @media only screen and (max-width:480px) {
 
-    .navi {
+    .slogan {
 
         height: 15em;
 
-        .textosobreimagen {
+
             position: relative;
 
             h1 {
                 top: 1em;
                 font-size: 3em;
             }
-        }
+        
     }
 
     .slider {
@@ -67,6 +68,7 @@
         margin-bottom: 40px;
     }
 }
+
 
 .item1 {
     display: grid;

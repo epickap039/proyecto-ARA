@@ -1,5 +1,5 @@
 @mixin items-content{
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -13,4 +13,10 @@
     gap: 1rem;
     background-color: #00ADB5;
     padding: 2rem; 
+}
+@mixin itemcentrados{
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
 }
