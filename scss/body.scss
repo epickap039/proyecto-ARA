@@ -63,13 +63,17 @@
 
 
 
-.flexproduct{
+.productos{
     display: flex;
+    flex-wrap: wrap;
     gap: 0;
 }
 
 .flexbienvenida{
-    @extend .flexproduct;
+    display: flex;
+    flex-basis: auto;
+    gap: 0;
+
     h2{
         @include itemcentrados;
         padding: 80px;

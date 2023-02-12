@@ -77,6 +77,15 @@
     gap: 20px;
 }
 
+.contadorPosicion {
+    display: flex;
+}
+
+.contadorCarrito {
+    color: $blancobeishe;
+    border-radius: 100%;
+    height: auto;
+}
 
 .carritoNav {
     height: 40px;
@@ -147,27 +156,3 @@
     width: 3em;
     height: 3em;
 }
-
-// .menu-list {
-//     display: none;
-//     color: $blancobeishe;
-//     li{
-
-//         padding: .5em;
-//     }
-// }
-
-// .menu-list.is-open {
-//     display: block;
-//     animation: fadeIn 0.3s ease-in-out;
-// }
-
-// @keyframes fadeIn {
-//     from {
-//         opacity: 0;
-//     }
-
-//     to {
-//         opacity: 1;
-//     }
-// }

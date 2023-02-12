@@ -60,6 +60,16 @@
   gap: 20px;
 }
 
+.contadorPosicion {
+  display: flex;
+}
+
+.contadorCarrito {
+  color: #EEEEEE;
+  border-radius: 100%;
+  height: auto;
+}
+
 .carritoNav {
   height: 40px;
   width: 40px;

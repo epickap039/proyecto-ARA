@@ -47,11 +47,17 @@
     margin-left: -300%;
   }
 }
-.flexproduct, .flexbienvenida {
+.productos {
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
 }
 
+.flexbienvenida {
+  display: flex;
+  flex-basis: auto;
+  gap: 0;
+}
 .flexbienvenida h2 {
   justify-content: center;
   align-items: center;

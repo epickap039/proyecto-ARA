@@ -60,6 +60,16 @@
   gap: 20px;
 }
 
+.contadorPosicion {
+  display: flex;
+}
+
+.contadorCarrito {
+  color: #EEEEEE;
+  border-radius: 100%;
+  height: auto;
+}
+
 .carritoNav {
   height: 40px;
   width: 40px;
@@ -177,11 +187,17 @@
     margin-left: -300%;
   }
 }
-.flexproduct, .flexbienvenida {
+.productos {
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
 }
 
+.flexbienvenida {
+  display: flex;
+  flex-basis: auto;
+  gap: 0;
+}
 .flexbienvenida h2 {
   justify-content: center;
   align-items: center;
