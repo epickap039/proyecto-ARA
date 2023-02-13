@@ -26,26 +26,32 @@
             </li>
         </ul>
 
+        <div id="alert" class="alert-container">
+            <div class="alert-message">
+                <img class="fas fa-check-circle" src="../imagenes/check.png" alt="check">
+                <p>Producto agregado con éxito</p>
+            </div>
+        </div>
+
+
         <nav class="navCarritoSearch">
+            <input class="search" type="text" name="buscar" id="buscar">
             <button class="fondoOffcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight">
                 <nav class="contadorPosicion" id="carritoIMG">
                     <img class="carritoNav" src="imagenes/carrito.png" alt="imagen carrito de compra">
                 </nav>
             </button>
-
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                 aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header text-bg-dark">
                     <h5 class="offcanvas-title " id="offcanvasRightLabel">Carrito de Compra</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body" id="contenedorCarritoCA"></div>
-                </div>
             </div>
-
-
-            <input class="search" type="text" name="buscar" id="buscar">
+            </div>
         </nav>
     </header>
     <main>

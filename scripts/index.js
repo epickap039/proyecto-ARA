@@ -1,6 +1,7 @@
 const contenedorProductos = document.getElementById("contenedorProductos");
 const contenedorCarritoCA = document.getElementById("contenedorCarritoCA");
 const carritoIMG = document.getElementById("carritoIMG");
+const alertContainer = document.getElementById("alert");
 const contadorcarrito = document.createElement("p");
 
 const seviciosDesarrollador = [
@@ -20,7 +21,9 @@ const carritoCompras = [];
 const agregarAlcarrito = (servicioSeleccionado, carrito) => {
     const servicioElegido = seviciosDesarrollador.find(item => item.id === servicioSeleccionado)
     carrito.push(servicioElegido);
+    showAlert();
     console.log("se agrego un producto al carrito", carritoCompras);
+    agregarLocalstorage("carrito", carritoCompras);
 }
 
 const AgregarContador = () => {
@@ -28,8 +31,8 @@ const AgregarContador = () => {
         carritoIMG.appendChild(contadorcarrito);
         contadorcarrito.classList.add("contadorCarrito");
         contadorcarrito.textContent = carritoCompras.length;
-    }    
-}    
+    }
+}
 
 
 const mostrarCarrito = () => {
@@ -39,15 +42,22 @@ const mostrarCarrito = () => {
         div.classList.add("itemcarrito");
         div.innerHTML =
             `
-            <p>Producto: ${servicio.nombre}</p>
+            <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
+            <p>${servicio.nombre}</p>
             <p>Precio: ${servicio.precio} MXN</p>
             <button class="eliminarcarrito" id="eliminar${servicio.id}"><img class="iconbote" src="imagenes/bote.png" alt="imagen de.."> </button>
             `
 
-            contenedorCarritoCA.appendChild(div);
-        })
+        contenedorCarritoCA.appendChild(div);
+    })
 }
 
+const agregarLocalstorage = (clave, valor) => {
+    localStorage.setItem(clave, JSON.stringify(valor))
+}
+
+// JSON.parse(localStorage.getItem("carrito"));
+// window.localStorage.getItem("carrito");
 
 
 seviciosDesarrollador.forEach(servicio => {
@@ -68,8 +78,15 @@ seviciosDesarrollador.forEach(servicio => {
         agregarAlcarrito(servicio.id, carritoCompras);
         AgregarContador();
         mostrarCarrito();
-    })    
-});    
+    })
+});
 
 
+
+function showAlert() {
+    alertContainer.style.display = "block";
+    setTimeout(function () {
+        alertContainer.style.display = "none";
+    }, 2000);
+}
 

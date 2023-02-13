@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/epickap039/proyecto-ARA#readme",
   "dependencies": {
-    "g": "^2.0.1"
-  },
-  "devDependencies": {}
+    "g": "^2.0.1",
+    "sweetalert": "^2.1.2"
+  }
 }

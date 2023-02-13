@@ -107,6 +107,13 @@
   height: 40px;
 }
 
+.imagenbote {
+  width: 40px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10%;
+}
+
 .search {
   position: relative;
   width: 40px;
@@ -167,6 +174,38 @@
   padding: 0%;
   width: 3em;
   height: 3em;
+}
+
+.alert-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #3e3e3e;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+}
+
+.alert-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.alert-message p, .alert-message .contanctanos label, .alert-message .contanctanos h2, .contanctanos .alert-message label, .contanctanos .alert-message h2 {
+  margin-bottom: 0%;
+}
+.alert-message img {
+  width: 30px;
+  height: auto;
+}
+
+.alert-message i {
+  font-size: 40px;
+  margin-right: 20px;
 }
 
 .slider {
