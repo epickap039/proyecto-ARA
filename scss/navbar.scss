@@ -6,17 +6,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 0%;
 }
 
 
 .header {
+    position: sticky;
+    top: 0;
+    padding: 15px;
     background-color: $negro;
     display: flex;
     gap: 2em;
     flex-wrap: wrap;
     @include items-content;
     padding-left: 40px;
-    padding-right: 40px;
 
     .logo {
         &:hover {
@@ -77,6 +80,12 @@
     gap: 20px;
 }
 
+.fondoOffcanvas {
+    background-color: $negro;
+    margin: 0%;
+    border: 0;
+}
+
 .contadorPosicion {
     display: flex;
 }
@@ -90,6 +99,30 @@
 .carritoNav {
     height: 40px;
     width: 40px;
+}
+
+.itemcarrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: .8em;
+    border-bottom: solid black;
+    
+    p {
+        margin-bottom: 0%;
+    }
+}
+
+.eliminarcarrito{
+    border: none;
+    margin: none;
+    background-color: transparent;
+}
+
+.iconbote{
+    width: auto;
+    height: 40px;
 }
 
 .search {
@@ -142,7 +175,7 @@
 
     h1 {
         padding: 0%;
-        position: relative;
+        // position: relative;
         color: $blancobeishe;
         font-size: $letragrande;
         margin-bottom: 0%;

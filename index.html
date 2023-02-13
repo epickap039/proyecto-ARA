@@ -25,10 +25,26 @@
                 <a href="contacto.html">Contactanos</a>
             </li>
         </ul>
+
         <nav class="navCarritoSearch">
-            <nav class="contadorPosicion" id="carritoIMG">
-                <img class="carritoNav" src="imagenes/carrito.png" alt="imagen carrito de compra">
-            </nav>
+            <button class="fondoOffcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight">
+                <nav class="contadorPosicion" id="carritoIMG">
+                    <img class="carritoNav" src="imagenes/carrito.png" alt="imagen carrito de compra">
+                </nav>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header text-bg-dark">
+                    <h5 class="offcanvas-title " id="offcanvasRightLabel">Carrito de Compra</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" id="contenedorCarritoCA"></div>
+                </div>
+            </div>
+
+
             <input class="search" type="text" name="buscar" id="buscar">
         </nav>
     </header>
@@ -39,7 +55,6 @@
             </h1>
             <img class="icon" src="imagenes/chip.png" alt="imagen de..">
         </div>
-
         <section>
             <div class="flexbienvenida">
                 <h2>
@@ -49,11 +64,8 @@
                     ARA ofrece soluciones en el área de mecatrónica, electrónica
                     e informática a industria o particular con bases tecnológica, de investigación
                     o emprendimiento, haciendo uso de los conocimientos en distintas áreas de ingeniería
-
                 </p>
             </div>
-
-
         </section>
         <section class="productos" id="contenedorProductos"></section>
         <section id="slid">

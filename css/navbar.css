@@ -3,9 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 0%;
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  padding: 15px;
   background-color: #222831;
   display: flex;
   gap: 2em;
@@ -13,7 +17,6 @@
   justify-content: space-between;
   align-items: center;
   padding-left: 40px;
-  padding-right: 40px;
 }
 .header .logo:hover {
   transform: scale(1.1);
@@ -60,6 +63,12 @@
   gap: 20px;
 }
 
+.fondoOffcanvas {
+  background-color: #222831;
+  margin: 0%;
+  border: 0;
+}
+
 .contadorPosicion {
   display: flex;
 }
@@ -73,6 +82,29 @@
 .carritoNav {
   height: 40px;
   width: 40px;
+}
+
+.itemcarrito {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.8em;
+  border-bottom: solid black;
+}
+.itemcarrito p {
+  margin-bottom: 0%;
+}
+
+.eliminarcarrito {
+  border: none;
+  margin: none;
+  background-color: transparent;
+}
+
+.iconbote {
+  width: auto;
+  height: 40px;
 }
 
 .search {
@@ -126,7 +158,6 @@
 }
 .slogan h1 {
   padding: 0%;
-  position: relative;
   color: #EEEEEE;
   font-size: 2em;
   margin-bottom: 0%;

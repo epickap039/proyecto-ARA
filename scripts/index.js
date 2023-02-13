@@ -1,3 +1,8 @@
+const contenedorProductos = document.getElementById("contenedorProductos");
+const contenedorCarritoCA = document.getElementById("contenedorCarritoCA");
+const carritoIMG = document.getElementById("carritoIMG");
+const contadorcarrito = document.createElement("p");
+
 const seviciosDesarrollador = [
     { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial" },
     { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds Personalizados", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo" },
@@ -8,39 +13,63 @@ const seviciosDesarrollador = [
     { id: 7, img: "../imagenes/carro.jpg", nombre: "Vehiculos Personalizados ", precio: 3500, descripcion: "El vehiculo que siepre deseo pero en miniatura o no? " },
 
 ];
-console.log(document);
 
 const carritoCompras = [];
 
-const contenedorProductos = document.getElementById("contenedorProductos");
-const carritoIMG = document.getElementById("carritoIMG");
 
-seviciosDesarrollador.forEach(servico => {
-    contenedorProductos.innerHTML +=
+const agregarAlcarrito = (servicioSeleccionado, carrito) => {
+    const servicioElegido = seviciosDesarrollador.find(item => item.id === servicioSeleccionado)
+    carrito.push(servicioElegido);
+    console.log("se agrego un producto al carrito", carritoCompras);
+}
+
+const AgregarContador = () => {
+    if (carritoCompras.length !== 0) {
+        carritoIMG.appendChild(contadorcarrito);
+        contadorcarrito.classList.add("contadorCarrito");
+        contadorcarrito.textContent = carritoCompras.length;
+    }    
+}    
+
+
+const mostrarCarrito = () => {
+    contenedorCarritoCA.innerHTML = "";
+    carritoCompras.forEach(servicio => {
+        const div = document.createElement("div");
+        div.classList.add("itemcarrito");
+        div.innerHTML =
+            `
+            <p>Producto: ${servicio.nombre}</p>
+            <p>Precio: ${servicio.precio} MXN</p>
+            <button class="eliminarcarrito" id="eliminar${servicio.id}"><img class="iconbote" src="imagenes/bote.png" alt="imagen de.."> </button>
+            `
+
+            contenedorCarritoCA.appendChild(div);
+        })
+}
+
+
+
+seviciosDesarrollador.forEach(servicio => {
+    const div = document.createElement("div");
+    div.innerHTML =
         `
-    <div class="product-card" >
-    <img src="${servico.img}" alt="${servico.nombre}">
-    <h3 class="product-title">${servico.nombre}</h3>
-    <p class="product-description">${servico.descripcion}</p>
-    <div class="product-price">$ ${servico.precio} MXN</div>
-    <button id="${servico.id}" class="add-to-cart-button">Agregar al Carrito</button>
+    <div class="product-card" >    
+    <img src="${servicio.img}" alt="${servicio.nombre}">
+    <h3 class="product-title">${servicio.nombre}</h3>
+    <p class="product-description">${servicio.descripcion}</p>
+    <div class="product-price">$ ${servicio.precio} MXN</div>
+    <button id="producto${servicio.id}" class="add-to-cart-button">Agregar al Carrito</button>
     </div>
     `
-});
+    contenedorProductos.appendChild(div);
+    const botonAgregarCarrito = document.getElementById(`producto${servicio.id}`)
+    botonAgregarCarrito.addEventListener("click", () => {
+        agregarAlcarrito(servicio.id, carritoCompras);
+        AgregarContador();
+        mostrarCarrito();
+    })    
+});    
 
 
-const agregarAlcarrito = (producto, carrito) => {
-    carrito.push(producto);
-    console.log("se agrego un producto al carrito");
-}
 
-// agregarAlcarrito(seviciosDesarrollador[1], carritoCompras);
-// agregarAlcarrito(seviciosDesarrollador[3], carritoCompras);
-
-const contadorcarrito = document.createElement("p");
-contadorcarrito.textContent = carritoCompras.length;
-contadorcarrito.classList.add("contadorCarrito");
-
-if(carritoCompras.length !==0){
-    carritoIMG.appendChild(contadorcarrito);
-}
