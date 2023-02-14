@@ -87,7 +87,7 @@
 .itemcarrito {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 1em;
   padding: 0.8em;
   border-bottom: solid black;
@@ -108,8 +108,8 @@
 }
 
 .imagenbote {
-  width: 40px;
-  height: auto;
+  width: auto;
+  height: 40px;
   overflow: hidden;
   border-radius: 10%;
 }

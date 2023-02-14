@@ -26,6 +26,14 @@ const agregarAlcarrito = (servicioSeleccionado, carrito) => {
     agregarLocalstorage("carrito", carritoCompras);
 }
 
+const eliminarItemdeCarrito = (servicioSeleccionado, carrito) => {
+    const servicioElegidoEliminar = seviciosDesarrollador.find(item => item.id === servicioSeleccionado)
+    carrito.push(servicioElegidoEliminar);
+    eliminarLocalStorage("carrito", carritoCompras);
+}
+
+
+
 const AgregarContador = () => {
     if (carritoCompras.length !== 0) {
         carritoIMG.appendChild(contadorcarrito);
@@ -40,25 +48,43 @@ const mostrarCarrito = () => {
     carritoCompras.forEach(servicio => {
         const div = document.createElement("div");
         div.classList.add("itemcarrito");
-        div.innerHTML =
+        div.innerHTML +=
             `
             <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
             <p>${servicio.nombre}</p>
-            <p>Precio: ${servicio.precio} MXN</p>
-            <button class="eliminarcarrito" id="eliminar${servicio.id}"><img class="iconbote" src="imagenes/bote.png" alt="imagen de.."> </button>
+            <p>$ ${servicio.precio} MXN</p>
+            <button class="eliminarcarrito" id="eliminardelcarrito${servicio.id}">
+            <img class="iconbote" src="imagenes/bote.png" alt="imagen de ${servicio.nombre}">
+            </button>
             `
-
         contenedorCarritoCA.appendChild(div);
+        // const botonEliminardelCarrito = document.getElementById(`eliminardelcarrito${servicio.id}`)
+        // botonEliminardelCarrito.addEventListener("click", () => {
+        //     const borrar_item = (id) => {
+        //         let itemaborrar = document.getElementById(`${id}`);
+        //         localStorage.removeItem(`${id}`);
+        //         itemaborrar.remove();
+        //     }
+        // })            
     })
 }
 
 const agregarLocalstorage = (clave, valor) => {
-    localStorage.setItem(clave, JSON.stringify(valor))
+    localStorage.setItem(clave, JSON.stringify(valor));
 }
 
-// JSON.parse(localStorage.getItem("carrito"));
-// window.localStorage.getItem("carrito");
+// const eliminarLocalStorage = (clave, valor) =>{
+//     localStorage.removeItem()
+// }
 
+// const eliminartodoLocalStorage = () =>{
+//     localStorage.clear();
+// }
+
+// const botonEliminardeCarrito = document.getElementById(`eliminar${servicio.id}`)
+// botonEliminardeCarrito.addEventListener("click", () => {
+//     eliminarLocalStorage();
+// })
 
 seviciosDesarrollador.forEach(servicio => {
     const div = document.createElement("div");
