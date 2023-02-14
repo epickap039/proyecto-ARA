@@ -6,22 +6,18 @@
   margin-bottom: 0%;
 }
 
-.header {
-  position: sticky;
-  top: 0;
-  padding: 15px;
-  background-color: #222831;
+header {
   display: flex;
-  gap: 2em;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width: max;
+  background-color: #222831;
   align-items: center;
-  padding-left: 40px;
+  justify-content: space-between;
+  padding: 15px;
 }
-.header .logo:hover {
+header .logo:hover {
   transform: scale(1.1);
 }
-.header .logo a {
+header .logo a {
   font-family: "IBM Plex Sans", sans-serif;
   color: #EEEEEE;
   text-decoration: none;
@@ -31,36 +27,33 @@
   align-self: flex-start;
   list-style: none;
 }
-.header .logo a:hover {
-  color: #00ADB5;
-}
-.header .navegacion {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 3em;
-  padding-left: 0%;
-  margin-bottom: 0;
-}
-.header .navegacion li {
-  display: inline-block;
-}
-.header .navegacion li:hover {
-  transform: scale(1.1);
-}
-.header .navegacion a {
-  font-size: 1.4em;
-  text-decoration: none;
-  color: #EEEEEE;
-}
-.header .navegacion a:hover {
+header .logo a:hover {
   color: #00ADB5;
 }
 
-.navCarritoSearch {
+nav {
   display: flex;
-  gap: 20px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  padding-left: 0%;
+  align-items: center;
+  margin-bottom: 0%;
+  gap: 2rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #EEEEEE;
+  padding: 10px;
+}
+
+.abrirmenu {
+  display: none;
+}
+
+.Cerrarmenu {
+  display: none;
 }
 
 .fondoOffcanvas {
@@ -154,7 +147,7 @@
 .slogan {
   padding: 200px;
   background-image: url(../imagenes/banner2.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: auto;
   display: flex;
   gap: 1em;
@@ -172,8 +165,8 @@
 
 .icon {
   padding: 0%;
-  width: 3em;
-  height: 3em;
+  width: 200px;
+  height: auto;
 }
 
 .alert-container {
@@ -259,6 +252,7 @@
 }
 .productos {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0;
 }
@@ -390,136 +384,195 @@
   padding: 1em;
 }
 
-@media only screen and (max-width: 480px) {
-  .slogan {
-    height: 15em;
-    position: relative;
+@media only screen and (max-width: 550px) {
+  header {
+    padding: 25px;
   }
-  .slogan h1 {
-    top: 1em;
-    font-size: 3em;
+  .abrirmenu, .Cerrarmenu {
+    display: block;
+    border: none;
+  }
+  .abrirmenu img, .Cerrarmenu img {
+    width: 40px;
+    height: 40px;
+    background-color: #222831;
+  }
+  nav {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #222831;
+    bottom: 0%;
+    gap: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    align-items: end;
+  }
+  nav button {
+    background-color: #222831;
+    padding: 0%;
+    margin: 0%;
+  }
+  nav ul {
+    flex-direction: column;
+    padding: 15px;
+  }
+  nav ul li {
+    align-items: end;
+  }
+  .slogan {
+    padding: 100px;
+    flex-direction: column;
+    background-repeat: repeat;
+    gap: 2rem;
+  }
+  .slogan img {
+    width: 200px;
+    height: auto;
+  }
+  .flexbienvenida {
+    flex-direction: column;
+  }
+  .flexbienvenida p, .flexbienvenida .contanctanos label, .contanctanos .flexbienvenida label, .flexbienvenida .contanctanos h2, .contanctanos .flexbienvenida h2 {
+    font-size: 0.8em;
+  }
+  .productos {
+    justify-content: center;
   }
   .slider {
-    width: auto;
-    height: auto;
+    width: max;
+    height: 160px;
+  }
+  footer {
+    padding: 0%;
+    width: max;
+  }
+  footer img {
+    padding: 0px;
     overflow: hidden;
   }
-  .slider ul {
-    display: flex;
-    animation: cambio 20s infinite alternate linear;
-    width: auto;
-    margin: 0%;
-    padding: 0%;
-  }
-  .slider img {
-    width: 100%;
-    height: auto;
-  }
-  .tienda1 {
-    margin: 0;
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  p, .contanctanos label, .contanctanos h2 {
-    margin-top: 10px;
-    padding: 0;
-    font-size: 24px;
-    height: 20px;
-  }
-  img {
-    margin: 0;
-    padding: 0;
-    box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
-    object-fit: cover;
-  }
-  .btn_busqueda {
-    margin-bottom: 40px;
-  }
 }
-.item1, .item1 .item5, .item1 .item4, .item1 .item3, .item1 .item2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 60% 15%;
-  justify-items: center;
-  align-items: center;
-  list-style: none;
+.centrarlogin {
+  display: flex;
+  justify-content: center;
+  padding: 200px;
+  height: auto;
   background-color: #00ADB5;
-  padding: 0%;
-  min-height: 400px;
-}
-.item1 .quienesSomos p, .item1 .item2 .quienesSomos p, .item1 .item3 .quienesSomos p, .item1 .item3 .item2 .quienesSomos p, .item1 .item3 .item3 .quienesSomos p, .item1 .item4 .quienesSomos p, .item1 .item4 .item2 .quienesSomos p, .item1 .item4 .item3 .quienesSomos p, .item1 .item4 .item3 .item2 .quienesSomos p, .item1 .item4 .item3 .item3 .quienesSomos p, .item1 .item4 .item4 .quienesSomos p, .item1 .item5 .quienesSomos p, .item1 .item5 .item2 .quienesSomos p, .item1 .item5 .item3 .quienesSomos p, .item1 .item5 .item3 .item2 .quienesSomos p, .item1 .item5 .item3 .item3 .quienesSomos p, .item1 .item5 .item4 .quienesSomos p, .item1 .item5 .item4 .item2 .quienesSomos p, .item1 .item5 .item4 .item3 .quienesSomos p, .item1 .item5 .item4 .item3 .item2 .quienesSomos p, .item1 .item5 .item4 .item3 .item3 .quienesSomos p, .item1 .item5 .item4 .item4 .quienesSomos p, .item1 .item5 .item5 .quienesSomos p, .item1 .quienesSomos .contanctanos label, .contanctanos .item1 .quienesSomos label, .item1 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item2 .quienesSomos label, .item1 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item3 .quienesSomos label, .item1 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item3 .item2 .quienesSomos label, .item1 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item3 .item3 .quienesSomos label, .item1 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .quienesSomos label, .item1 .item4 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item2 .quienesSomos label, .item1 .item4 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item3 .quienesSomos label, .item1 .item4 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item3 .item2 .quienesSomos label, .item1 .item4 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item3 .item3 .quienesSomos label, .item1 .item4 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item4 .quienesSomos label, .item1 .item5 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .quienesSomos label, .item1 .item5 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item2 .quienesSomos label, .item1 .item5 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item3 .quienesSomos label, .item1 .item5 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item3 .item2 .quienesSomos label, .item1 .item5 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item3 .item3 .quienesSomos label, .item1 .item5 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .quienesSomos label, .item1 .item5 .item4 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item2 .quienesSomos label, .item1 .item5 .item4 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item3 .quienesSomos label, .item1 .item5 .item4 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item3 .item2 .quienesSomos label, .item1 .item5 .item4 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item3 .item3 .quienesSomos label, .item1 .item5 .item4 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item4 .quienesSomos label, .item1 .item5 .item5 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item5 .quienesSomos label, .item1 .quienesSomos .contanctanos h2, .contanctanos .item1 .quienesSomos h2, .item1 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item2 .quienesSomos h2, .item1 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item3 .quienesSomos h2, .item1 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item3 .item2 .quienesSomos h2, .item1 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item3 .item3 .quienesSomos h2, .item1 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .quienesSomos h2, .item1 .item4 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item2 .quienesSomos h2, .item1 .item4 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item3 .quienesSomos h2, .item1 .item4 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item3 .item2 .quienesSomos h2, .item1 .item4 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item3 .item3 .quienesSomos h2, .item1 .item4 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item4 .quienesSomos h2, .item1 .item5 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .quienesSomos h2, .item1 .item5 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item2 .quienesSomos h2, .item1 .item5 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item3 .quienesSomos h2, .item1 .item5 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item3 .item2 .quienesSomos h2, .item1 .item5 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item3 .item3 .quienesSomos h2, .item1 .item5 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .quienesSomos h2, .item1 .item5 .item4 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item2 .quienesSomos h2, .item1 .item5 .item4 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item3 .quienesSomos h2, .item1 .item5 .item4 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item3 .item2 .quienesSomos h2, .item1 .item5 .item4 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item3 .item3 .quienesSomos h2, .item1 .item5 .item4 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item4 .quienesSomos h2, .item1 .item5 .item5 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item5 .quienesSomos h2 {
-  width: 100%;
 }
 
-@media only screen and (max-width: 900px) {
-  .navi {
-    height: 15em;
-  }
-  .navi .textosobreimagen {
-    position: relative;
-  }
-  .navi .textosobreimagen h1 {
-    top: 1em;
-    font-size: 3em;
-  }
-  .slider {
-    width: auto;
-    height: auto;
-    overflow: hidden;
-  }
-  .slider ul {
-    display: flex;
-    animation: cambio 20s infinite alternate linear;
-    width: auto;
-    margin: 0%;
-    padding: 0%;
-  }
-  .slider img {
-    width: 100%;
-    height: auto;
-  }
-  .tienda1 {
-    margin: 0;
-    display: grid;
-    gap: 1em;
-    grid-template-columns: 2fr;
-    grid-template-rows: auto;
-  }
-  p, .contanctanos label, .contanctanos h2 {
-    margin-top: 10px;
-    padding: 0;
-    font-size: 24px;
-    height: 20px;
-  }
-  img {
-    margin: 0;
-    padding: 0;
-    box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 11px 11px 63px -21px rgba(0, 0, 0, 0.75);
-    object-fit: cover;
-  }
-  .btn_busqueda {
-    margin-bottom: 40px;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: 0.4s ease-in-out;
 }
-.item1, .item1 .item2, .item1 .item3, .item1 .item4, .item1 .item5 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 60% 15%;
-  justify-items: center;
+.form:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+.form button {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
+}
+
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+.field {
+  display: flex;
   align-items: center;
-  list-style: none;
-  background-color: #00ADB5;
-  padding: 0%;
-  min-height: 400px;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
-.item1 .quienesSomos p, .item1 .item2 .quienesSomos p, .item1 .item3 .quienesSomos p, .item1 .item3 .item2 .quienesSomos p, .item1 .item3 .item3 .quienesSomos p, .item1 .item4 .quienesSomos p, .item1 .item4 .item2 .quienesSomos p, .item1 .item4 .item3 .quienesSomos p, .item1 .item4 .item3 .item2 .quienesSomos p, .item1 .item4 .item3 .item3 .quienesSomos p, .item1 .item4 .item4 .quienesSomos p, .item1 .item5 .quienesSomos p, .item1 .item5 .item2 .quienesSomos p, .item1 .item5 .item3 .quienesSomos p, .item1 .item5 .item3 .item2 .quienesSomos p, .item1 .item5 .item3 .item3 .quienesSomos p, .item1 .item5 .item4 .quienesSomos p, .item1 .item5 .item4 .item2 .quienesSomos p, .item1 .item5 .item4 .item3 .quienesSomos p, .item1 .item5 .item4 .item3 .item2 .quienesSomos p, .item1 .item5 .item4 .item3 .item3 .quienesSomos p, .item1 .item5 .item4 .item4 .quienesSomos p, .item1 .item5 .item5 .quienesSomos p, .item1 .quienesSomos .contanctanos label, .contanctanos .item1 .quienesSomos label, .item1 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item2 .quienesSomos label, .item1 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item3 .quienesSomos label, .item1 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item3 .item2 .quienesSomos label, .item1 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item3 .item3 .quienesSomos label, .item1 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .quienesSomos label, .item1 .item4 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item2 .quienesSomos label, .item1 .item4 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item3 .quienesSomos label, .item1 .item4 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item3 .item2 .quienesSomos label, .item1 .item4 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item3 .item3 .quienesSomos label, .item1 .item4 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item4 .item4 .quienesSomos label, .item1 .item5 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .quienesSomos label, .item1 .item5 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item2 .quienesSomos label, .item1 .item5 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item3 .quienesSomos label, .item1 .item5 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item3 .item2 .quienesSomos label, .item1 .item5 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item3 .item3 .quienesSomos label, .item1 .item5 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .quienesSomos label, .item1 .item5 .item4 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item2 .quienesSomos label, .item1 .item5 .item4 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item3 .quienesSomos label, .item1 .item5 .item4 .item3 .item2 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item3 .item2 .quienesSomos label, .item1 .item5 .item4 .item3 .item3 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item3 .item3 .quienesSomos label, .item1 .item5 .item4 .item4 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item4 .item4 .quienesSomos label, .item1 .item5 .item5 .quienesSomos .contanctanos label, .contanctanos .item1 .item5 .item5 .quienesSomos label, .item1 .quienesSomos .contanctanos h2, .contanctanos .item1 .quienesSomos h2, .item1 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item2 .quienesSomos h2, .item1 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item3 .quienesSomos h2, .item1 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item3 .item2 .quienesSomos h2, .item1 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item3 .item3 .quienesSomos h2, .item1 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .quienesSomos h2, .item1 .item4 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item2 .quienesSomos h2, .item1 .item4 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item3 .quienesSomos h2, .item1 .item4 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item3 .item2 .quienesSomos h2, .item1 .item4 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item3 .item3 .quienesSomos h2, .item1 .item4 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item4 .item4 .quienesSomos h2, .item1 .item5 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .quienesSomos h2, .item1 .item5 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item2 .quienesSomos h2, .item1 .item5 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item3 .quienesSomos h2, .item1 .item5 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item3 .item2 .quienesSomos h2, .item1 .item5 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item3 .item3 .quienesSomos h2, .item1 .item5 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .quienesSomos h2, .item1 .item5 .item4 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item2 .quienesSomos h2, .item1 .item5 .item4 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item3 .quienesSomos h2, .item1 .item5 .item4 .item3 .item2 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item3 .item2 .quienesSomos h2, .item1 .item5 .item4 .item3 .item3 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item3 .item3 .quienesSomos h2, .item1 .item5 .item4 .item4 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item4 .item4 .quienesSomos h2, .item1 .item5 .item5 .quienesSomos .contanctanos h2, .contanctanos .item1 .item5 .item5 .quienesSomos h2 {
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
   width: 100%;
+  color: #d3d3d3;
+}
+
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+
+.button3 {
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+.button3:hover {
+  background-color: red;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,17 @@ const contenedorCarritoCA = document.getElementById("contenedorCarritoCA");
 const carritoIMG = document.getElementById("carritoIMG");
 const alertContainer = document.getElementById("alert");
 const contadorcarrito = document.createElement("p");
+const nav = document.getElementById("nav");
+const abrir = document.getElementById("abrir");
+const cerrar = document.getElementById("cerrar");
+
+abrir.addEventListener("click", ()=>{
+    nav.classList.add("visible");
+})
+
+cerrar.addEventListener("click", ()=>{
+    nav.classList.remove("visible");
+})
 
 const seviciosDesarrollador = [
     { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial" },
@@ -53,6 +64,7 @@ const mostrarCarrito = () => {
             <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
             <p>${servicio.nombre}</p>
             <p>$ ${servicio.precio} MXN</p>
+            <p>Cantidad</p>
             <button class="eliminarcarrito" id="eliminardelcarrito${servicio.id}">
             <img class="iconbote" src="imagenes/bote.png" alt="imagen de ${servicio.nombre}">
             </button>
