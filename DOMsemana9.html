@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mediaqueries.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Desarrollador web Front End</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a class="fuentedelogo" href="/index.html" alt="Proyecto ARA">Proyecto ARA</a>
+        </div>
+        <ul class="navegacion">
+            <li>
+                <a href="portafolio.html">Portafolio</a>
+            </li>
+            <li>
+                <a href="contacto.html">Contactanos</a>
+            </li>
+            <li>
+                <a href="DOMsemana9.html">DOM</a>
+            </li>
+        </ul>
+
+        <div id="alert" class="alert-container">
+            <div class="alert-message">
+                <img class="fas fa-check-circle" src="../imagenes/check.png" alt="check">
+                <p>Producto agregado con éxito</p>
+            </div>
+        </div>
+
+
+        <nav class="navCarritoSearch">
+            <input class="search" type="text" name="buscar" id="buscar">
+            <button class="fondoOffcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight">
+                <nav class="contadorPosicion" id="carritoIMG">
+                    <img class="carritoNav" src="imagenes/carrito.png" alt="imagen carrito de compra">
+                </nav>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header text-bg-dark">
+                    <h5 class="offcanvas-title " id="offcanvasRightLabel">Carrito de Compra</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" id="contenedorCarritoCA"></div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <h1 id="h1HolaMundo">Hola Mundo</h1>
+    <section class="productos">
+
+        <div id="agregarlista">Hola</div>
+        <div id="arreglosem9">
+            <button class="add-to-cart-button" style="margin: 40px;" id="aparecer">
+                aparecer lista
+            </button>
+            <button class="add-to-cart-button" style="margin: 40px;" id="desaparece">
+                desaparecer lista
+            </button>
+        </div>
+    </section>
+
+
+
+    <script>
+        const HolaMundoH1 = document.getElementById("h1HolaMundo");
+        HolaMundoH1.innerHTML = "Hola Mundo modificado con DOM";
+        HolaMundoH1();
+
+    </script>
+    <script>
+        const listaDOM = document.getElementById("agregarlista")
+        listaDOM.innerHTML = "";
+        const div = document.createElement('ul');
+        div.classList.add("product-card");
+        div.innerHTML = `
+                    <li>
+                        <img src="imagenes/im1.jpg" alt="imagen de tasa de cafe y laptop">
+                        <p>lista generada por DOM</p>
+                    </li>
+                    <li>
+                        <img src="imagenes/im2.jpg" alt="imagen codigo de html">
+                        <p>lista generada por DOM</p>
+                    </li>
+                    <li>
+                        <img src="imagenes/im3.jpg" alt="teclado iluminado">
+                        <p>lista generada por DOM</p>
+                    </li>
+                    <li>
+                        <img src="imagenes/im4.jpg" alt="dron">
+                        <p>lista generada por DOM</p>
+                    </li>
+        `;
+        listaDOM.appendChild(div);
+    </script>
+    <script>
+        const arreglosem9 = document.getElementById("arreglosem9");
+        const ProductosDOM = [
+            { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial" },
+            { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds Personalizados", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo" },
+            { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Audifonos recomendados por nuestros patrocinadores" },
+            { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones con distintas caracteristicas segun sus necesidades" },
+            { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclados recomendados por nuestros patrocinadores" },
+            { id: 6, img: "../imagenes/placa.jpg", nombre: "PLaca PCB ", precio: 500, descripcion: "Placa personalizada segun requiera, el costo aumenta segun los componentes" },
+            { id: 7, img: "../imagenes/carro.jpg", nombre: "Vehiculos Personalizados ", precio: 3500, descripcion: "El vehiculo que siepre deseo pero en miniatura o no? " },
+
+        ];
+        ProductosDOM.forEach(servicio => {
+            const div = document.createElement("div");
+            div.innerHTML =
+                `
+<div class="product-card" >    
+<img src="${servicio.img}" alt="${servicio.nombre}">
+<h3 class="product-title">${servicio.nombre}</h3>
+<p class="product-description">${servicio.descripcion}</p>
+<div class="product-price">$ ${servicio.precio} MXN</div>
+<button id="producto${servicio.id}" class="add-to-cart-button">Agregar al Carrito</button>
+</div>
+`
+            arreglosem9.appendChild(div);
+        })
+            const botonA = document.getElementById('aparecer');
+            const botonD = document.getElementById('desaparece');
+        //     botonA.addEventListener('click', () => {
+        //     })
+
+        // })
+
+
+    </script>
+    <script src="./scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
