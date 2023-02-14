@@ -1,41 +1,15 @@
-.mapa {
+footer {
   background-color: #393E46;
   border: 10px;
   border-style: solid;
   border-color: #222831;
-}
-.mapa iframe {
-  padding: 20px;
-  min-height: 400px;
-}
-
-.titulofooter {
-  padding: 20px 20px;
-}
-.titulofooter p, .titulofooter .contanctanos label, .titulofooter .contanctanos h2, .contanctanos .titulofooter label, .contanctanos .titulofooter h2 {
-  color: #EEEEEE;
-  font-size: 2em;
-}
-
-.contanctanos {
-  display: grid;
-  grid-auto-columns: 1fr;
-  gap: 2em;
-  align-items: center;
-  padding: 1%;
-  align-items: center;
+  display: flex;
   justify-content: center;
 }
-.contanctanos p, .contanctanos label, .contanctanos h2 {
-  font-size: 2em;
-  color: #EEEEEE;
-  padding: 0.5em;
-}
-.contanctanos label, .contanctanos h2 {
-  font-size: 1.4em;
-}
-.contanctanos .btn_busqueda {
-  padding: 1em;
+footer img {
+  overflow: hidden;
+  padding: 20px;
+  width: 400px;
 }
 
 /*# sourceMappingURL=footer.css.map */

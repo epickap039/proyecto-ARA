@@ -47,6 +47,10 @@ nav ul li a {
   color: #EEEEEE;
   padding: 10px;
 }
+nav ul li div {
+  display: flex;
+  align-items: center;
+}
 
 .abrirmenu {
   display: none;
@@ -85,7 +89,7 @@ nav ul li a {
   padding: 0.8em;
   border-bottom: solid black;
 }
-.itemcarrito p, .itemcarrito .contanctanos label, .itemcarrito .contanctanos h2, .contanctanos .itemcarrito label, .contanctanos .itemcarrito h2 {
+.itemcarrito p {
   margin-bottom: 0%;
 }
 
@@ -188,7 +192,7 @@ nav ul li a {
   align-items: center;
   gap: 10px;
 }
-.alert-message p, .alert-message .contanctanos label, .alert-message .contanctanos h2, .contanctanos .alert-message label, .contanctanos .alert-message h2 {
+.alert-message p {
   margin-bottom: 0%;
 }
 .alert-message img {
@@ -272,7 +276,7 @@ nav ul li a {
   color: #EEEEEE;
   margin-bottom: 0;
 }
-.flexbienvenida p, .flexbienvenida .contanctanos label, .flexbienvenida .contanctanos h2, .contanctanos .flexbienvenida label, .contanctanos .flexbienvenida h2 {
+.flexbienvenida p {
   display: flex;
   height: auto;
   width: auto;
@@ -344,44 +348,18 @@ nav ul li a {
   cursor: pointer;
 }
 
-.mapa {
+footer {
   background-color: #393E46;
   border: 10px;
   border-style: solid;
   border-color: #222831;
-}
-.mapa iframe {
-  padding: 20px;
-  min-height: 400px;
-}
-
-.titulofooter {
-  padding: 20px 20px;
-}
-.titulofooter p, .titulofooter .contanctanos label, .titulofooter .contanctanos h2, .contanctanos .titulofooter label, .contanctanos .titulofooter h2 {
-  color: #EEEEEE;
-  font-size: 2em;
-}
-
-.contanctanos {
-  display: grid;
-  grid-auto-columns: 1fr;
-  gap: 2em;
-  align-items: center;
-  padding: 1%;
-  align-items: center;
+  display: flex;
   justify-content: center;
 }
-.contanctanos p, .contanctanos label, .contanctanos h2 {
-  font-size: 2em;
-  color: #EEEEEE;
-  padding: 0.5em;
-}
-.contanctanos label, .contanctanos h2 {
-  font-size: 1.4em;
-}
-.contanctanos .btn_busqueda {
-  padding: 1em;
+footer img {
+  overflow: hidden;
+  padding: 20px;
+  width: 400px;
 }
 
 @media only screen and (max-width: 550px) {
@@ -442,7 +420,7 @@ nav ul li a {
   .flexbienvenida {
     flex-direction: column;
   }
-  .flexbienvenida p, .flexbienvenida .contanctanos label, .contanctanos .flexbienvenida label, .flexbienvenida .contanctanos h2, .contanctanos .flexbienvenida h2 {
+  .flexbienvenida p {
     font-size: 0.8em;
   }
   .productos {

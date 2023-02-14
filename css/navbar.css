@@ -47,6 +47,10 @@ nav ul li a {
   color: #EEEEEE;
   padding: 10px;
 }
+nav ul li div {
+  display: flex;
+  align-items: center;
+}
 
 .abrirmenu {
   display: none;

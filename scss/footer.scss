@@ -1,53 +1,16 @@
 @import "variables";
-.mapa {
+footer {
     background-color: $negromate;
     border: 10px;
     border-style: solid;
     border-color: $negro;
-
-    iframe {
-        padding: 20px;
-        min-height: 400px;
-    }
-}
-
-.titulofooter {
-    padding: 20px 20px;
-
-    p {
-        color: $blancobeishe;
-        font-size: $letragrande;
-    }
-}
-
-.contanctanos {
-    display: grid;
-    grid-auto-columns: 1fr;
-    gap: 2em;
-    align-items: center;
-    padding: 1%;
-    align-items: center;
+    display: flex;
     justify-content: center;
 
-
-    p {
-        font-size: $letragrande;
-        color: $blancobeishe;
-        padding: .5em;
-
-    }
-
-    label {
-        @extend p;
-        font-size: $letramediana;
-
-    }
-
-    h2 {
-        @extend label;
-    }
-
-    .btn_busqueda{
-        padding: 1em;
+    img {
+        overflow: hidden;
+        padding: 20px;
+        width: 400px;
     }
 }
+
