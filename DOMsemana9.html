@@ -27,6 +27,7 @@
     <section style="padding: 40px;">
         <h2 id="nombrebienvenida">hola me podrias dar tu Nombre?</h2>
         <input id="inputnombre" placeholder="ingresa tu nombre"> </input>
+        <button onclick='borrarLocal()'>Reiniciar</button>
     </section>
     <script>
         const HolaMundoH1 = document.getElementById("h1HolaMundo");
@@ -83,13 +84,30 @@
 
         let nombrebienvenida = document.getElementById("nombrebienvenida");
         let inputnombre = document.getElementById("inputnombre");
+        let nombreusuario = "";
+        let nombreLocal;
 
-        inputnombre.addEventListener("change", () =>{
-            let escuchar = inputnombre.value;
-            nombrebienvenida.innerHTML = "Bienvenido Nuevamente   "+ escuchar;
-        });
-        
-        
+        if (nombreLocal == null) {
+
+            inputnombre.addEventListener("change", () => {
+                nombreusuario = inputnombre.value;
+                nombrebienvenida.innerHTML = "Bienvenido " + nombreusuario;
+                localStorage.setItem('nombre', nombreusuario);
+            });
+        }
+        if (nombreLocal !== null) {
+            nombreLocal = localStorage.getItem('nombre');
+            nombrebienvenida.innerHTML = "Bienvenido Nuevamente   " + nombreLocal;
+        }
+
+
+        function borrarLocal() {
+            nombrebienvenida.innerHTML = "hola me podrias dar tu Nombre?";
+            localStorage.clear();
+        }
+
+
+
 
 
 
