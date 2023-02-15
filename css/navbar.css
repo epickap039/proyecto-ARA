@@ -60,8 +60,18 @@ nav ul li div {
   display: none;
 }
 
+#contenedorCarritoCA {
+  flex-direction: column;
+  padding: 15px;
+}
+
+#headerOffcanvas {
+  width: 400px;
+}
+
 .fondoOffcanvas {
   background-color: #222831;
+  width: max;
   margin: 0%;
   border: 0;
 }
@@ -149,9 +159,9 @@ nav ul li div {
 }
 
 .slogan {
-  padding: 200px;
+  padding: max;
   background-image: url(../imagenes/banner2.jpg);
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: auto;
   display: flex;
   gap: 1em;
