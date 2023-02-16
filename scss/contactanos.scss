@@ -1,119 +1,92 @@
-
-.centrarlogin{
+.centrarlogin {
     display: flex;
     justify-content: center;
-    padding: 200px;
     height: auto;
     background-color: #00ADB5;
 }
 
-.form {
+.login-box {
     display: flex;
     flex-direction: column;
-    width: 600px;
-    gap: 10px;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 0.4em;
-    background-color: #171717;
-    border-radius: 25px;
-    transition: .4s ease-in-out;
-    &:hover{
-        transform: scale(1.05);
-        border: 1px solid black;
+    width: 500px;
+    padding: 40px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, .9);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+
+    p {
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 0;
     }
-    button{
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin-top: 2.5em;
+
+    button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #3d405b;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 17px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        margin: 5px;
+
     }
+
 }
 
+.user-box {
+    position: relative;
 
-#heading {
-    text-align: center;
-    margin: 2em;
-    color: rgb(255, 255, 255);
-    font-size: 1.2em;
+    input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 1px;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+
+        &:focus,
+        &:valid {
+            top: -20px;
+            left: 0;
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+
+    label {
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: .5s;
+    }
+
 }
 
-.field {
+.registrate {
+    padding-top: 30px;
+    margin-bottom: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    border-radius: 25px;
-    padding: 0.6em;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: #171717;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-}
-
-.input-icon {
-    height: 1.3em;
-    width: 1.3em;
-    fill: white;
-}
-
-.input-field {
-    background: none;
-    border: none;
-    outline: none;
-    width: 100%;
-    color: #d3d3d3;
-}
-
-
-.button1 {
-    padding: 0.5em;
-    padding-left: 1.1em;
-    padding-right: 1.1em;
-    border-radius: 5px;
-    margin-right: 0.5em;
-    border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-    &:hover{
-        background-color: black;
-        color: white;
-    }
-}
-
-
-.button2 {
-    padding: 0.5em;
-    padding-left: 2.3em;
-    padding-right: 2.3em;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-    &:hover{
-        background-color: black;
-        color: white;
-    }
-}
-
-
-
-.button3 {
-    margin-bottom: 3em;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-    &:hover{
-        background-color: red;
-        color: white;
+    p {
+        margin-bottom: 0;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 15px;
     }
 }

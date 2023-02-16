@@ -109,12 +109,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 1em;
+    gap: 5px;
     padding: .8em;
     border-bottom: solid black;
 
     p {
         margin-bottom: 0%;
+        align-items: end;
     }
 }
 

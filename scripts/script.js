@@ -40,7 +40,7 @@ const agregarLocalstorage = (clave, valor) => {
 //---------------------Productos------------------------------------------------
 const seviciosDesarrollador = [
     { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial", cantidad: 1 },
-    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds Personalizados", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo", cantidad: 1},
+    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds Personalizados", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo", cantidad: 1 },
     { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Audifonos recomendados por nuestros patrocinadores", cantidad: 1 },
     { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones con distintas caracteristicas segun sus necesidades", cantidad: 1 },
     { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclados recomendados por nuestros patrocinadores", cantidad: 1 },
@@ -50,7 +50,7 @@ const seviciosDesarrollador = [
 ];
 
 //----------------------------------------------------------------------------------------------------
-let carritoCompras = [];
+let carritoCompras = JSON.parse(localStorage.getItem( 'carrito')) || [];
 let mostrarEliminar = [];
 
 //Contador de Items en el carrito
@@ -59,6 +59,9 @@ const AgregarContador = () => {
         carritoIMG.appendChild(contadorcarrito);
         contadorcarrito.classList.add("contadorCarrito");
         contadorcarrito.textContent = carritoCompras.length;
+    }
+    else{
+        carritoIMG.removeChild(contadorcarrito);
     }
 }
 
@@ -74,17 +77,25 @@ const mostrarCarrito = () => {
         <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
         <p>${servicio.nombre}</p>
         <p>$ ${servicio.precio} MXN</p>
-        <p>Cantidad</p>
+        <p>Cantidad: ${servicio.cantidad}</p>
+        <p>Total: ${servicio.cantidad * servicio.precio}</p>
         `
         contenedorCarritoCA.appendChild(div);
         let eliminar = document.createElement("div");
         eliminar.innerHTML = `<img class="iconbote" src="imagenes/bote.png" alt="imagen de ${servicio.nombre}">`
         eliminar.className = `eliminarcarrito${servicio.id}`;
         div.append(eliminar);
-        eliminar.addEventListener("click", () =>{
+        eliminar.addEventListener("click", () => {
             eliminarProducto(servicio.id, carritoCompras);
-            // console.log("producto para eliminar"+ JSON.stringify( carritoCompras));
+            agregarLocalstorage('carrito', carritoCompras);
+            AgregarContador();
         });
+        agregarLocalstorage('carrito', carritoCompras);
+        //Para mostrar el total de compra, pero falta gregar un contenedon extra -----------------------------------------------------
+        // const total = carritoCompras.reduce((acc, el)=> acc + el.precio * el.cantidad, 0);
+        // const totalPrecio = document.createElement("div");
+        // totalPrecio.innerHTML = `<p>Total a Pagar: $ ${total}</p>`;
+        // contenedorCarritoCA.appendChild(totalPrecio);
     })
 }
 
@@ -114,8 +125,18 @@ seviciosDesarrollador.forEach(servicio => {
 });
 
 const agregarAlcarrito = (servicioSeleccionado, carrito) => {
-    const servicioElegido = seviciosDesarrollador.find(item => item.id === servicioSeleccionado)
-    carrito.push(servicioElegido);
+    const servicioElegido = seviciosDesarrollador.find(item => item.id === servicioSeleccionado);
+    const repetido = carritoCompras.some((productoRepetido) => productoRepetido.id === servicioSeleccionado);
+
+    if (repetido) {
+        carritoCompras.map((prod) => {
+            if (prod.id === servicioSeleccionado) {
+                prod.cantidad++;
+            }
+        })
+    } else {
+        carrito.push(servicioElegido);
+    }
     showAlert();
 }
 
@@ -127,6 +148,24 @@ const eliminarProducto = (servicioSeleccionado, carrito) => {
     carrito.push(carritoCompras);
     mostrarCarrito();
 }
+//===================================formulario==================================================================================
+
+// const registrate = document.getElementById('registrate');
+// const divBoton = document.getElementById('divBoton');
+// const login = document.getElementById('login');
+
+// registrate.addEventListener('click', ()=>{
+//     console.log(divBoton);
+// divBoton.removeChild('p');
+// login.innerText = "Registrate";
+
+
+// })
 
 //=====================================================================================================================================
 
+
+window.addEventListener('load', ()=>{
+    mostrarCarrito();
+    AgregarContador();
+})

@@ -95,12 +95,13 @@ nav ul li div {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 1em;
+  gap: 5px;
   padding: 0.8em;
   border-bottom: solid black;
 }
 .itemcarrito p {
   margin-bottom: 0%;
+  align-items: end;
 }
 
 .eliminarcarrito {
