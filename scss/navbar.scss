@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixin";
 
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,9 @@
     font-family: 'IBM Plex Sans', sans-serif;
     margin-bottom: 0%;
 
+}
+.offcanvas.offcanvas-end {
+    width: 500px;
 }
 
 header {
@@ -54,10 +58,20 @@ nav {
         gap: 2rem;
 
         li {
+
             a {
-                text-decoration: none;
+                font-family: 'IBM Plex Sans', sans-serif;
                 color: $blancobeishe;
-                padding: 10px;
+                text-decoration: none;
+                font-size: $letramediana;
+                transition: all 0.3s;
+                flex-grow: 3;
+                align-self: flex-start;
+                list-style: none;
+    
+                &:hover {
+                    color: $azulcian;
+                }
             }
             div{
                 display: flex;
@@ -80,7 +94,7 @@ nav {
     padding: 15px;
 }
 #headerOffcanvas{
-    width: 400px;
+    width: 500px;
 }
 
 .fondoOffcanvas {
@@ -178,6 +192,7 @@ nav {
 
 .slogan {
     padding: max;
+    padding-left: 20px;
     background-image: url(../imagenes/banner2.jpg);
     background-repeat: no-repeat;
     background-size: auto;

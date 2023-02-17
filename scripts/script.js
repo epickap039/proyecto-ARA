@@ -3,9 +3,6 @@ const contenedorCarritoCA = document.getElementById("contenedorCarritoCA");
 const carritoIMG = document.getElementById("carritoIMG");
 const contadorcarrito = document.createElement("p");
 
-
-
-
 //---------Botones del Menu Hamburguesa------------------------------------
 const nav = document.getElementById("nav");
 const abrir = document.getElementById("abrir");
@@ -31,8 +28,6 @@ function showAlert() {
 }
 
 //---------------Local storage--------------------------------------------------------------
-let itemLocalStorage;
-
 const agregarLocalstorage = (clave, valor) => {
     localStorage.setItem(clave, JSON.stringify(valor));
 }
@@ -50,8 +45,7 @@ const seviciosDesarrollador = [
 ];
 
 //----------------------------------------------------------------------------------------------------
-let carritoCompras = JSON.parse(localStorage.getItem( 'carrito')) || [];
-let mostrarEliminar = [];
+let carritoCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 
 //Contador de Items en el carrito
 const AgregarContador = () => {
@@ -60,7 +54,8 @@ const AgregarContador = () => {
         contadorcarrito.classList.add("contadorCarrito");
         contadorcarrito.textContent = carritoCompras.length;
     }
-    else{
+    else {
+        carritoIMG.appendChild(contadorcarrito);  
         carritoIMG.removeChild(contadorcarrito);
     }
 }
@@ -148,24 +143,8 @@ const eliminarProducto = (servicioSeleccionado, carrito) => {
     carrito.push(carritoCompras);
     mostrarCarrito();
 }
-//===================================formulario==================================================================================
 
-// const registrate = document.getElementById('registrate');
-// const divBoton = document.getElementById('divBoton');
-// const login = document.getElementById('login');
-
-// registrate.addEventListener('click', ()=>{
-//     console.log(divBoton);
-// divBoton.removeChild('p');
-// login.innerText = "Registrate";
-
-
-// })
-
-//=====================================================================================================================================
-
-
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     mostrarCarrito();
     AgregarContador();
 })

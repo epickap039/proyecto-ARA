@@ -6,6 +6,10 @@
   margin-bottom: 0%;
 }
 
+.offcanvas.offcanvas-end {
+  width: 500px;
+}
+
 header {
   display: flex;
   width: max;
@@ -43,9 +47,17 @@ nav ul {
   gap: 2rem;
 }
 nav ul li a {
-  text-decoration: none;
+  font-family: "IBM Plex Sans", sans-serif;
   color: #EEEEEE;
-  padding: 10px;
+  text-decoration: none;
+  font-size: 1.4em;
+  transition: all 0.3s;
+  flex-grow: 3;
+  align-self: flex-start;
+  list-style: none;
+}
+nav ul li a:hover {
+  color: #00ADB5;
 }
 nav ul li div {
   display: flex;
@@ -66,7 +78,7 @@ nav ul li div {
 }
 
 #headerOffcanvas {
-  width: 400px;
+  width: 500px;
 }
 
 .fondoOffcanvas {
@@ -161,6 +173,7 @@ nav ul li div {
 
 .slogan {
   padding: max;
+  padding-left: 20px;
   background-image: url(../imagenes/banner2.jpg);
   background-repeat: no-repeat;
   background-size: auto;
