@@ -24,10 +24,10 @@
         <nav class="nav" id="nav">
             <button class="Cerrarmenu" id="cerrar"><img src="../imagenes/salir.png" alt="imagen cerrar menu"></button>
             <ul>
-                <input class="search" type="text" name="buscar" id="buscar">
+                <!-- <input class="search" type="text" name="buscar" id="buscar">
                 <li>
                     <a href="portafolio.html">Portafolio</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="contacto.html">Contactanos</a>
                 </li>
@@ -55,42 +55,41 @@
         <div id="alert" class="alert-container">
             <div class="alert-message">
                 <img class="fas fa-check-circle" src="../imagenes/check.png" alt="check">
-                <p>Producto agregado con éxito</p>
+                <p>Producto agregado</p>
             </div>
         </div>
     </header>
     <main>
         <div class="slogan">
             <h1>
-                Transforma tu mundo con tecnología y robótica de vanguardia.
+                Transforma tu mundo con tecnología de vanguardia.
             </h1>
             <img class="icon" src="../imagenes/brazorobotico.png" alt="imagen de..">
         </div>
+        <section class="productosBarra">
+            <p>Productos</p>
+            <div>
+                <button id="ordenarP">Ordenar</button>
+                <select id="myDropdown">
+                    <option>Seleccione un opcion</option>
+                    <option value="optionMm">Mayor a Menor</option>
+                    <option value="optionmM">Menor a Mayor</option>
+                </select>
+            </div>
+        </section>
+        <section class="productos" id="contenedorProductos"></section>
         <section>
             <div class="flexbienvenida">
                 <h2>
-                    Bienvenido a el sitio Oficial de Proyecto ARA
+                    Bienvenido a el sitio oficial de TechNova
                 </h2>
                 <div>
-                    <img src="./imagenes/mpch_blanco.png">
                     <p>
-                        ARA ofrece soluciones en el área de mecatrónica, electrónica
-                        e informática a industria o particular con bases tecnológica, de investigación
-                        o emprendimiento, haciendo uso de los conocimientos en distintas áreas de ingeniería
-                    </p>
+                        TechNova ofrece una gran bariedad de productos para complementar tu set-up a demas de ofrecer
+                        envios internacionales</p>
                 </div>
             </div>
         </section>
-        <section>
-            <button id="ordenarP">Ordenar</button>
-            <select id="myDropdown">
-                <option>Seleccione un opcion</option>
-                <option value="optionMm">Mayor a Menor</option>
-                <option value="optionmM">Menor a Mayor</option>
-            </select>
-
-        </section>
-        <section class="productos" id="contenedorProductos"></section>
         <section id="slid">
             <div class="slider">
                 <ul>
@@ -128,7 +127,7 @@
         </div>
     </footer>
 
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

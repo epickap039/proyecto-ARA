@@ -1,3 +1,4 @@
+
 const contenedorProductos = document.getElementById("contenedorProductos");
 const contenedorCarritoCA = document.getElementById("contenedorCarritoCA");
 const carritoIMG = document.getElementById("carritoIMG");
@@ -21,7 +22,7 @@ const agregarLocalstorage = (clave, valor) => {
     localStorage.setItem(clave, JSON.stringify(valor));
 }
 
-//----------------------------------------------------------------------------------------------------
+//-------------------------Datos de LocalStorage---------------------------------------------------------------------------
 let carritoCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 
 //Contador de Items en el carrito
@@ -32,7 +33,7 @@ const AgregarContador = () => {
         contadorcarrito.textContent = carritoCompras.length;
     }
     else {
-        carritoIMG.appendChild(contadorcarrito);    // esto esta mal pro funciona lo arreglare mas tarde 
+        carritoIMG.appendChild(contadorcarrito);
         carritoIMG.removeChild(contadorcarrito);
     }
 }
@@ -49,8 +50,9 @@ const mostrarCarrito = () => {
         <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
         <p>${servicio.nombre}</p>
         <p>$${servicio.precio} MXN</p>
-        <p>Cant:${servicio.cantidad}</p>
+        <p>Cant: ${servicio.cantidad}</p>
         <p>Total:${servicio.cantidad * servicio.precio}</p>
+        <button id="cant${servicio.id}">Mas</button>
         `
         contenedorCarritoCA.appendChild(div);
         let eliminar = document.createElement("div");
@@ -62,10 +64,79 @@ const mostrarCarrito = () => {
             agregarLocalstorage('carrito', carritoCompras);
             AgregarContador();
         });
+        const botonagregarMAS = document.getElementById(`cant${servicio.id}`);
+        botonagregarMAS.addEventListener('click', () => {
+            agregarAlcarrito(servicio.id, carritoCompras);
+            mostrarCarrito();
+        });
         agregarLocalstorage('carrito', carritoCompras);
     })
+    if (carritoCompras.length !== 0) {
+        const boton = document.createElement("button");
+        boton.setAttribute('id', 'comprar');
+        boton.setAttribute('onclick', 'comprar()');
+        boton.textContent = 'comprar';
+        contenedorCarritoCA.appendChild(boton);
+    }
+
 }
-//agregar al carrito en index
+//-------Boton de comprar---------
+
+function comprar() {
+
+    swal("gracias por tu compra", "Seguir Comprando", "success");
+    // alert('gracias por tu compra')
+    localStorage.removeItem('carrito');
+    carritoCompras = []
+    console.log(carritoCompras);
+    mostrarCarrito();
+    AgregarContador();
+    contenedorCarritoCA.innerHTML = '';
+
+}
+//---------------------Productos------------------------------------------------
+const seviciosDesarrollador = [
+    { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial", cantidad: 1 },
+    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo", cantidad: 1 },
+    { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Audifonos recomendados por nuestros patrocinadores", cantidad: 1 },
+    { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones con distintas caracteristicas segun sus necesidades", cantidad: 1 },
+    { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclados recomendados por nuestros patrocinadores", cantidad: 1 },
+    { id: 6, img: "../imagenes/placa.jpg", nombre: "PLaca PCB ", precio: 500, descripcion: "Placa personalizada segun requiera, el costo aumenta segun los componentes", cantidad: 1 },
+    { id: 7, img: "../imagenes/carro.jpg", nombre: "Carrito", precio: 3500, descripcion: "El vehiculo que siepre deseo pero en miniatura o no? ", cantidad: 1 },
+    { id: 8, img: "../imagenes/control.jpg", nombre: "Control gamer", precio: 1200, descripcion: "Control de PS4 con diseño personalizado con temática de zombies", cantidad: 1 },
+    { id: 9, img: "../imagenes/cpu3.jpg", nombre: "cpu black", precio: 5200, descripcion: "CPU gamer con tarjeta de video", cantidad: 1 },
+    { id: 10, img: "../imagenes/luces.jpg", nombre: "Tira de leds", precio: 500, descripcion: "Tira de leds rgb con un largo de 10m", cantidad: 1 },
+    { id: 11, img: "../imagenes/hph.jpg", nombre: "Audifonos negros", precio: 4500, descripcion: "Audifonos profesionales con supresión de ruido exterior", cantidad: 1 },
+    { id: 12, img: "../imagenes/mouse.jpg", nombre: "Mouse gamer", precio: 1200, descripcion: "Mouse gamer inhalambrico", cantidad: 1 },
+];
+
+//---------------Alerta de agregado-------------------------------------------
+const alertContainer = document.getElementById("alert");
+
+
+function showAlert() {
+    alertContainer.style.display = "block";
+    setTimeout(function () {
+        alertContainer.style.display = "none";
+    }, 2000);
+}
+
+//-------------------agregar mas producto o eliminar producto----------------------
+const agregarAlcarrito = (servicioSeleccionado, carrito) => {
+    const servicioElegido = seviciosDesarrollador.find(item => item.id === servicioSeleccionado);
+    const repetido = carritoCompras.some((productoRepetido) => productoRepetido.id === servicioSeleccionado);
+
+    if (repetido) {
+        carritoCompras.map((prod) => {
+            if (prod.id === servicioSeleccionado) {
+                prod.cantidad++;
+            }
+        })
+    } else {
+        carrito.push(servicioElegido);
+    }
+    showAlert();
+}
 
 const eliminarProducto = (servicioSeleccionado, carrito) => {
     const BuscarID = carritoCompras.find((elmeento) => elmeento.id === servicioSeleccionado);
@@ -75,6 +146,7 @@ const eliminarProducto = (servicioSeleccionado, carrito) => {
     carrito.push(carritoCompras);
     mostrarCarrito();
 }
+
 //===================================formulario==================================================================================
 
 
@@ -106,23 +178,24 @@ registrate.addEventListener('click', () => {
 
 entrarRegistro.addEventListener('click', () => {
     if (inputU.value === '') {
-        alert('ingrese un usuario valido');
+        swal('ingrese un usuario valido');
     } else {
         if (inputC.value === '') {
-            alert('ingrese una contraseña valida');
+            swal('ingrese una contraseña valida');
         } else {
             if (inputC.value !== inputCC.value) {
-                alert('Las contraseñas no coinciden')
+                swal('Las contraseñas no coinciden')
             } else {
                 fetch("./scripts/data.json")
                     .then((res) => res.json())
                     .then((data) => {
                         const elementoEncontrado = data.find(item => item.name === inputU.value);
                         if (elementoEncontrado !== undefined) {
-                            alert('el Usuario ya existe');
+                            swal('el Usuario ya existe');
                         } else {
-                            alert('Registro exitoso');
-                            window.location = "index.html";
+                            swal('Registro exitoso');
+                            setTimeout(window.location = "index.html", 6000);
+                            
                         }
                     });
             }
@@ -142,15 +215,15 @@ entrarBoton.addEventListener('click', () => {
                 console.log(nameJson);
                 console.log(contraJson);
                 if (inputC.value === contraJson) {
-                    alert('Registro Exitoso');
-                    window.location = "index.html";
+                    swal('Acceso Exitoso');
+                    setTimeout(window.location = "index.html", 6000);
                 } else {
-                    alert('contraseña incorrecta');
+                    swal('contraseña incorrecta');
                     inputU.value = '';
                     inputC.value = '';
                 }
             } else {
-                alert('NO existe el Usuario');
+                swal('NO existe el Usuario');
             }
         })
 })

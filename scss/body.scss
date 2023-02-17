@@ -1,6 +1,86 @@
 @import "variables";
 @import "mixin";
 
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../fuentes/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MiFuente', sans-serif;
+    margin-bottom: 0%;
+
+}
+
+
+.slogan {
+    display: flex;
+    padding: max;
+    padding-left: 20px;
+    background-image: url(../imagenes/banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    gap: 1em;
+
+    @include itemcentrados;
+
+    h1 {
+        padding: 0%;
+        // position: relative;
+        color: $blancobeishe;
+        font-size: $letragrande;
+        margin-bottom: 0%;
+    }
+}
+
+.productosBarra {
+    display: flex;
+    background-color: $negromate;
+    width: max;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    p {
+        color: $blancobeishe;
+        padding: 10px;
+        font-size: $letramediana;
+        margin-bottom: 0%;
+    }
+
+    div {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+
+        button {
+            background: none;
+            padding: 3px;
+            height: fit-content;
+            border: none;
+            color: $blancobeishe;
+        }
+
+        select {
+            display: flex;
+            width: fit-content;
+            height: fit-content;
+            background-color: #777;
+            color: $blancobeishe;
+            border-radius: 10px;
+        }
+    }
+
+}
+
 .slider {
     padding: 0;
     width: 100%;
@@ -90,12 +170,6 @@
         flex-wrap: wrap;
         justify-content: space-around;
 
-        img {
-            width: 100px;
-            height: 100px;
-            padding: 20px;
-        }
-
         p {
             display: flex;
             margin: 0;
@@ -103,7 +177,6 @@
             font-size: $letramediana;
             text-align: center;
             padding: 30px;
-            padding-top: 0;
             overflow: hidden;
             color: $blancobeishe;
         }

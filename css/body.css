@@ -1,3 +1,75 @@
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fuentes/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "MiFuente", sans-serif;
+  margin-bottom: 0%;
+}
+
+.slogan {
+  display: flex;
+  padding: max;
+  padding-left: 20px;
+  background-image: url(../imagenes/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+.slogan h1 {
+  padding: 0%;
+  color: #EEEEEE;
+  font-size: 2em;
+  margin-bottom: 0%;
+}
+
+.productosBarra {
+  display: flex;
+  background-color: #393E46;
+  width: max;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.productosBarra p {
+  color: #EEEEEE;
+  padding: 10px;
+  font-size: 1.4em;
+  margin-bottom: 0%;
+}
+.productosBarra div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.productosBarra div button {
+  background: none;
+  padding: 3px;
+  height: fit-content;
+  border: none;
+  color: #EEEEEE;
+}
+.productosBarra div select {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  background-color: #777;
+  color: #EEEEEE;
+  border-radius: 10px;
+}
+
 .slider {
   padding: 0;
   width: 100%;
@@ -76,11 +148,6 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.flexbienvenida div img {
-  width: 100px;
-  height: 100px;
-  padding: 20px;
-}
 .flexbienvenida div p {
   display: flex;
   margin: 0;
@@ -91,7 +158,6 @@
   font-size: 1.4em;
   text-align: center;
   padding: 30px;
-  padding-top: 0;
   overflow: hidden;
   color: #EEEEEE;
 }

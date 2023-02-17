@@ -1,15 +1,22 @@
 @import "variables";
 @import "mixin";
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../fuentes/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'MiFuente', sans-serif;
     margin-bottom: 0%;
 
 }
+
 .offcanvas.offcanvas-end {
     width: 500px;
 }
@@ -25,12 +32,13 @@ header {
     .logo {
         display: flex;
         align-items: center;
+
         &:hover {
             transform: scale(1.1);
         }
 
         a {
-            
+
             color: $blancobeishe;
             text-decoration: none;
             font-size: $letragrande;
@@ -42,7 +50,8 @@ header {
                 color: $azulcian;
             }
         }
-        img{
+
+        img {
             width: 60px;
             height: 60px;
         }
@@ -54,7 +63,7 @@ header {
 
 nav {
     display: flex;
-    
+
 
     ul {
         list-style: none;
@@ -67,7 +76,6 @@ nav {
         li {
 
             a {
-                font-family: 'IBM Plex Sans', sans-serif;
                 color: $blancobeishe;
                 text-decoration: none;
                 font-size: $letramediana;
@@ -75,14 +83,15 @@ nav {
                 flex-grow: 3;
                 align-self: flex-start;
                 list-style: none;
-    
+
                 &:hover {
                     color: $azulcian;
                 }
             }
-            div{
+
+            div {
                 display: flex;
-                align-items: flex-end;             
+                align-items: flex-end;
             }
 
         }
@@ -92,15 +101,17 @@ nav {
 .abrirmenu {
     display: none;
 }
-.Cerrarmenu{
+
+.Cerrarmenu {
     display: none;
 }
 
-#contenedorCarritoCA{
+#contenedorCarritoCA {
     flex-direction: column;
     padding: 15px;
 }
-#headerOffcanvas{
+
+#headerOffcanvas {
     width: 500px;
 }
 
@@ -129,15 +140,33 @@ nav {
 .itemcarrito {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 5px;
+    justify-content: space-between;
+    width: 490px;
+    gap: 15px;
     padding: .8em;
     border-bottom: solid black;
+    flex-wrap: wrap;
+
 
     p {
         margin-bottom: 0%;
-        align-items: end;
+        font-size: $letrapequena;
     }
+
+    .imagenbote {
+        width: 100px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 10%;
+    }
+}
+
+.nomprecio{
+    flex-grow: 3;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
 }
 
 .eliminarcarrito {
@@ -151,12 +180,11 @@ nav {
     height: 40px;
 }
 
-.imagenbote {
+.botonAgregarExtra{
     width: auto;
-    height: 40px;
-    overflow: hidden;
-    border-radius: 10%;
+    height: 30px;
 }
+
 
 .search {
     position: relative;
@@ -197,27 +225,6 @@ nav {
     }
 }
 
-.slogan {
-    padding: max;
-    padding-left: 20px;
-    background-image: url(../imagenes/banner2.jpg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    display: flex;
-    gap: 1em;
-    @include itemcentrados;
-
-    h1 {
-        padding: 0%;
-        // position: relative;
-        color: $blancobeishe;
-        font-size: $letragrande;
-        margin-bottom: 0%;
-    }
-
-
-}
-
 .icon {
     padding: 0%;
     width: 200px;
@@ -229,7 +236,7 @@ nav {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 300px;
+    width: auto;
     background-color: #3e3e3e;
     color: #fff;
     border-radius: 10px;
@@ -243,6 +250,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: auto;
+    justify-content: space-between;
 
     p {
         margin-bottom: 0%;
@@ -259,7 +268,7 @@ nav {
     margin-right: 20px;
 }
 
-#comprar{
+#comprar {
     display: flex;
     border-radius: 4px;
     background-color: #0b3961;
@@ -272,3 +281,4 @@ nav {
     width: auto;
     cursor: pointer;
 }
+
