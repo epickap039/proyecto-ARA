@@ -18,21 +18,27 @@ header {
   justify-content: space-between;
   padding: 15px;
 }
+header .logo {
+  display: flex;
+  align-items: center;
+}
 header .logo:hover {
   transform: scale(1.1);
 }
 header .logo a {
-  font-family: "IBM Plex Sans", sans-serif;
   color: #EEEEEE;
   text-decoration: none;
   font-size: 2em;
   transition: all 0.3s;
   flex-grow: 3;
-  align-self: flex-start;
   list-style: none;
 }
 header .logo a:hover {
   color: #00ADB5;
+}
+header .logo img {
+  width: 60px;
+  height: 60px;
 }
 
 nav {
@@ -61,7 +67,7 @@ nav ul li a:hover {
 }
 nav ul li div {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .abrirmenu {
@@ -229,6 +235,20 @@ nav ul li div {
   margin-right: 20px;
 }
 
+#comprar {
+  display: flex;
+  border-radius: 4px;
+  background-color: #0b3961;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  margin-top: 20px;
+  padding: 15px;
+  width: auto;
+  cursor: pointer;
+}
+
 .slider {
   padding: 0;
   width: 100%;
@@ -300,10 +320,20 @@ nav ul li div {
   color: #EEEEEE;
   margin-bottom: 0;
 }
-.flexbienvenida p {
+.flexbienvenida div {
   display: flex;
-  height: auto;
-  width: auto;
+  background-color: #222831;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.flexbienvenida div img {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+.flexbienvenida div p {
+  display: flex;
   margin: 0;
   justify-content: center;
   align-items: center;
@@ -311,9 +341,9 @@ nav ul li div {
   width: auto;
   font-size: 1.4em;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
+  padding-top: 0;
   overflow: hidden;
-  background-color: #222831;
   color: #EEEEEE;
 }
 
@@ -373,17 +403,29 @@ nav ul li div {
 }
 
 footer {
-  background-color: #393E46;
-  border: 10px;
-  border-style: solid;
-  border-color: #222831;
-  display: flex;
-  justify-content: center;
-}
-footer img {
-  overflow: hidden;
+  background-color: #333;
+  color: #fff;
   padding: 20px;
-  width: 400px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-methods img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.social-media a {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.social-media a:hover {
+  color: #ccc;
 }
 
 @media only screen and (max-width: 550px) {

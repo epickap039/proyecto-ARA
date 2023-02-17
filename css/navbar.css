@@ -18,21 +18,27 @@ header {
   justify-content: space-between;
   padding: 15px;
 }
+header .logo {
+  display: flex;
+  align-items: center;
+}
 header .logo:hover {
   transform: scale(1.1);
 }
 header .logo a {
-  font-family: "IBM Plex Sans", sans-serif;
   color: #EEEEEE;
   text-decoration: none;
   font-size: 2em;
   transition: all 0.3s;
   flex-grow: 3;
-  align-self: flex-start;
   list-style: none;
 }
 header .logo a:hover {
   color: #00ADB5;
+}
+header .logo img {
+  width: 60px;
+  height: 60px;
 }
 
 nav {
@@ -61,7 +67,7 @@ nav ul li a:hover {
 }
 nav ul li div {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .abrirmenu {
@@ -227,6 +233,20 @@ nav ul li div {
 .alert-message i {
   font-size: 40px;
   margin-right: 20px;
+}
+
+#comprar {
+  display: flex;
+  border-radius: 4px;
+  background-color: #0b3961;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  margin-top: 20px;
+  padding: 15px;
+  width: auto;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=navbar.css.map */

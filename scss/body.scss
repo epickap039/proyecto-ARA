@@ -63,37 +63,50 @@
 
 
 
-.productos{
+.productos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0;
 }
 
-.flexbienvenida{
+.flexbienvenida {
     display: flex;
     flex-basis: auto;
     gap: 0;
 
-    h2{
+    h2 {
         @include itemcentrados;
         padding: 80px;
         background-color: $azulcian;
         color: $blancobeishe;
         margin-bottom: 0;
     }
-    p{
+
+    div {
         display: flex;
-        height: auto;
-        width: auto;
-        margin: 0;
-        @include itemcentrados;
-        font-size: $letramediana;
-        text-align: center;
-        padding: 40px;
-        overflow: hidden;
         background-color: $negro;
-        color: $blancobeishe;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        img {
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+        }
+
+        p {
+            display: flex;
+            margin: 0;
+            @include itemcentrados;
+            font-size: $letramediana;
+            text-align: center;
+            padding: 30px;
+            padding-top: 0;
+            overflow: hidden;
+            color: $blancobeishe;
+        }
     }
 }
 

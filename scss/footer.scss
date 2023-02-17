@@ -1,16 +1,27 @@
 @import "variables";
-footer {
-    background-color: $negromate;
-    border: 10px;
-    border-style: solid;
-    border-color: $negro;
-    display: flex;
-    justify-content: center;
 
-    img {
-        overflow: hidden;
-        padding: 20px;
-        width: 400px;
-    }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-methods img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.social-media a:hover {
+    color: #ccc;
+}

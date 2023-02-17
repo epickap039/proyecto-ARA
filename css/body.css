@@ -69,10 +69,20 @@
   color: #EEEEEE;
   margin-bottom: 0;
 }
-.flexbienvenida p {
+.flexbienvenida div {
   display: flex;
-  height: auto;
-  width: auto;
+  background-color: #222831;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.flexbienvenida div img {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+.flexbienvenida div p {
+  display: flex;
   margin: 0;
   justify-content: center;
   align-items: center;
@@ -80,9 +90,9 @@
   width: auto;
   font-size: 1.4em;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
+  padding-top: 0;
   overflow: hidden;
-  background-color: #222831;
   color: #EEEEEE;
 }
 

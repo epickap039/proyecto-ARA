@@ -23,24 +23,30 @@ header {
     padding: 15px;
 
     .logo {
+        display: flex;
+        align-items: center;
         &:hover {
             transform: scale(1.1);
         }
 
         a {
-            font-family: 'IBM Plex Sans', sans-serif;
+            
             color: $blancobeishe;
             text-decoration: none;
             font-size: $letragrande;
             transition: all 0.3s;
             flex-grow: 3;
-            align-self: flex-start;
             list-style: none;
 
             &:hover {
                 color: $azulcian;
             }
         }
+        img{
+            width: 60px;
+            height: 60px;
+        }
+
     }
 
 
@@ -48,6 +54,7 @@ header {
 
 nav {
     display: flex;
+    
 
     ul {
         list-style: none;
@@ -75,7 +82,7 @@ nav {
             }
             div{
                 display: flex;
-                align-items: center;              
+                align-items: flex-end;             
             }
 
         }
@@ -250,4 +257,18 @@ nav {
 .alert-message i {
     font-size: 40px;
     margin-right: 20px;
+}
+
+#comprar{
+    display: flex;
+    border-radius: 4px;
+    background-color: #0b3961;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 15px;
+    width: auto;
+    cursor: pointer;
 }

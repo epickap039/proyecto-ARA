@@ -16,7 +16,8 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a class="fuentedelogo" href="/index.html" alt="Proyecto ARA">Mango Azul</a>
+            <img src="./imagenes/mpch_blanco.png" href="/index.html">
+            <a class="fuentedelogo" href="/index.html" alt="Proyecto ARA">TechNova</a>
         </div>
         <button class="abrirmenu" id="abrir"><img src="../imagenes/hamburguesa.png"
                 alt="imagen menu hamburguesa"></button>
@@ -46,7 +47,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="offcanvas-body" id="contenedorCarritoCA"></div>
-                        </div>>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -70,12 +71,24 @@
                 <h2>
                     Bienvenido a el sitio Oficial de Proyecto ARA
                 </h2>
-                <p>
-                    ARA ofrece soluciones en el área de mecatrónica, electrónica
-                    e informática a industria o particular con bases tecnológica, de investigación
-                    o emprendimiento, haciendo uso de los conocimientos en distintas áreas de ingeniería
-                </p>
+                <div>
+                    <img src="./imagenes/mpch_blanco.png">
+                    <p>
+                        ARA ofrece soluciones en el área de mecatrónica, electrónica
+                        e informática a industria o particular con bases tecnológica, de investigación
+                        o emprendimiento, haciendo uso de los conocimientos en distintas áreas de ingeniería
+                    </p>
+                </div>
             </div>
+        </section>
+        <section>
+            <button id="ordenarP">Ordenar</button>
+            <select id="myDropdown">
+                <option>Seleccione un opcion</option>
+                <option value="optionMm">Mayor a Menor</option>
+                <option value="optionmM">Menor a Mayor</option>
+            </select>
+
         </section>
         <section class="productos" id="contenedorProductos"></section>
         <section id="slid">
@@ -98,34 +111,24 @@
         </section>
     </main>
     <footer>
-        <!-- <section>
-            <div class="centrarlogin">
-                <div class="login-box">
-                    <p id="login">Login</p>
-                    <form>
-                        <div class="user-box">
-                            <label>Email</label>
-                            <input required="" name="" type="text" id="inputE">
-                        </div>
-                        <div class="user-box">
-                            <label>Password</label>
-                            <input required="" name="" type="password" id="inputC">
-                        </div>
-                    </form>
-                    <div id="crearRegistro" class="botonEntrarOculto">
-                        <button id="EntrarRegistro"><span id="spanEntrar">Entrar</span></button>
-                    </div>
-                    <div class="registrate" id="divBoton">
-                        <button id="entrarLogin"><span id="spanEntrar">Entrar</span></button>
-                        <div class="registrateDiv">
-                            <p>No tienes una cuenta? </p>
-                            <button id="registrate">Registrate!</button>
-                        </div>
-                    </div>
-                </div>
+
+        <div class="container">
+            <div class="payment-methods">
+                <p>We accept:</p>
+                <!-- <img src="visa.png" alt="Visa">
+                <img src="mastercard.png" alt="Mastercard">
+                <img src="paypal.png" alt="PayPal"> -->
             </div>
-        </section> -->
+            <div class="social-media">
+                <p>Follow us:</p>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
+
+
     <script src="./scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

@@ -2,6 +2,8 @@ const contenedorProductos = document.getElementById("contenedorProductos");
 const contenedorCarritoCA = document.getElementById("contenedorCarritoCA");
 const carritoIMG = document.getElementById("carritoIMG");
 const contadorcarrito = document.createElement("p");
+let existeComprar;
+let comprarB;
 
 //---------Botones del Menu Hamburguesa------------------------------------
 const nav = document.getElementById("nav");
@@ -55,7 +57,7 @@ const AgregarContador = () => {
         contadorcarrito.textContent = carritoCompras.length;
     }
     else {
-        carritoIMG.appendChild(contadorcarrito);  
+        carritoIMG.appendChild(contadorcarrito);
         carritoIMG.removeChild(contadorcarrito);
     }
 }
@@ -71,9 +73,10 @@ const mostrarCarrito = () => {
             `
         <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
         <p>${servicio.nombre}</p>
-        <p>$ ${servicio.precio} MXN</p>
-        <p>Cantidad: ${servicio.cantidad}</p>
-        <p>Total: ${servicio.cantidad * servicio.precio}</p>
+        <p>$${servicio.precio} MXN</p>
+        <p>Cant: ${servicio.cantidad}</p>
+        <p>Total:${servicio.cantidad * servicio.precio}</p>
+        <button id="cant${servicio.id}">Mas</button>
         `
         contenedorCarritoCA.appendChild(div);
         let eliminar = document.createElement("div");
@@ -85,19 +88,39 @@ const mostrarCarrito = () => {
             agregarLocalstorage('carrito', carritoCompras);
             AgregarContador();
         });
+        const botonagregarMAS = document.getElementById(`cant${servicio.id}`);
+        botonagregarMAS.addEventListener('click', () => {
+            agregarAlcarrito(servicio.id, carritoCompras);
+            mostrarCarrito();
+        });
         agregarLocalstorage('carrito', carritoCompras);
-        //Para mostrar el total de compra, pero falta gregar un contenedon extra -----------------------------------------------------
-        // const total = carritoCompras.reduce((acc, el)=> acc + el.precio * el.cantidad, 0);
-        // const totalPrecio = document.createElement("div");
-        // totalPrecio.innerHTML = `<p>Total a Pagar: $ ${total}</p>`;
-        // contenedorCarritoCA.appendChild(totalPrecio);
     })
+    const boton = document.createElement("button");
+    boton.setAttribute('id', 'comprar');
+    boton.textContent = 'comprar';
+    existeComprar = 1;
+    contenedorCarritoCA.appendChild(boton);
 }
+
+//-------Boton de comprar---------
+// if (existeComprar === 1) {
+//     comprarB = document.getElementById('comprar');
+//     console.log(comprarB);
+    
+//     comprarB.addEventListener('click', () => {
+//         localStorage.clear(); //simula que os productos pasaron al servidor
+//         mostrarCarrito();
+//         alert('gracias por tu compra')
+//     })
+// } else {
+//     existeComprar = 0;
+// }
 
 //agregar al carrito en index
 
 seviciosDesarrollador.forEach(servicio => {
     const div = document.createElement("div");
+    div.setAttribute('id', `producto${servicio.id}`)
     div.innerHTML =
         `
     <div class="product-card" >    
@@ -148,3 +171,64 @@ window.addEventListener('load', () => {
     mostrarCarrito();
     AgregarContador();
 })
+
+//--------------------------------Ordenar--------------------------------------
+
+const ordenarP = document.getElementById('ordenarP');
+const dropdown = document.getElementById("myDropdown");
+let selectedOption;
+
+function ordenarMm() {
+    seviciosDesarrollador.sort((a, b) => {
+        if (a.precio == b.precio) {
+            return 0;
+        }
+        if (b.precio < a.precio) {
+            return -1;
+        }
+        return 1;
+    });
+}
+function ordenarmM() {
+    seviciosDesarrollador.sort((a, b) => {
+        if (a.precio == b.precio) {
+            return 0;
+        }
+        if (a.precio < b.precio) {
+            return -1;
+        }
+        return 1;
+    });
+}
+
+dropdown.addEventListener("change", function () {
+    selectedOption = dropdown.value;
+    console.log("La opción seleccionada es " + selectedOption);
+});
+
+ordenarP.addEventListener('click', () => {
+    contenedorProductos.innerHTML = '';
+    if (selectedOption === 'optionMm') {
+        ordenarMm();
+    }
+    if (selectedOption === 'optionmM') {
+        ordenarmM();
+    }
+
+
+    seviciosDesarrollador.forEach(servicio => {
+        const div2 = document.createElement("div");
+        div2.innerHTML =
+            `
+    <div class="product-card" >    
+    <img src="${servicio.img}" alt="${servicio.nombre}">
+    <h3 class="product-title">${servicio.nombre}</h3>
+    <p class="product-description">${servicio.descripcion}</p>
+    <div class="product-price">$ ${servicio.precio} MXN</div>
+    <button id="producto${servicio.id}" class="add-to-cart-button">Agregar al Carrito</button>
+    </div>
+    `
+        contenedorProductos.appendChild(div2);
+    });
+    mostrarCarrito();
+});

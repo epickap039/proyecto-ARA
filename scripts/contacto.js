@@ -48,9 +48,9 @@ const mostrarCarrito = () => {
             `
         <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
         <p>${servicio.nombre}</p>
-        <p>$ ${servicio.precio} MXN</p>
-        <p>Cantidad: ${servicio.cantidad}</p>
-        <p>Total: ${servicio.cantidad * servicio.precio}</p>
+        <p>$${servicio.precio} MXN</p>
+        <p>Cant:${servicio.cantidad}</p>
+        <p>Total:${servicio.cantidad * servicio.precio}</p>
         `
         contenedorCarritoCA.appendChild(div);
         let eliminar = document.createElement("div");
