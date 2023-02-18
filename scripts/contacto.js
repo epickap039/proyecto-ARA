@@ -16,14 +16,29 @@ abrir.addEventListener("click", () => {
 cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
-
 //---------------Local storage--------------------------------------------------------------
 const agregarLocalstorage = (clave, valor) => {
     localStorage.setItem(clave, JSON.stringify(valor));
 }
 
-//-------------------------Datos de LocalStorage---------------------------------------------------------------------------
+//---------------------Productos------------------------------------------------
+const seviciosDesarrollador = [
+    { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial", cantidad: 1 },
+    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo", cantidad: 1 },
+    { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Audifonos recomendados por nuestros patrocinadores", cantidad: 1 },
+    { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones con distintas caracteristicas segun sus necesidades", cantidad: 1 },
+    { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclados recomendados por nuestros patrocinadores", cantidad: 1 },
+    { id: 6, img: "../imagenes/placa.jpg", nombre: "PLaca PCB ", precio: 500, descripcion: "Placa personalizada segun requiera, el costo aumenta segun los componentes", cantidad: 1 },
+    { id: 7, img: "../imagenes/cpu3.jpg", nombre: "cpu black", precio: 5200, descripcion: "CPU gamer con tarjeta de video", cantidad: 1 },
+    { id: 8, img: "../imagenes/luces.jpg", nombre: "Tira de leds", precio: 500, descripcion: "Tira de leds rgb con un largo de 10m", cantidad: 1 },
+    { id: 9, img: "../imagenes/mouse.jpg", nombre: "Mouse gamer", precio: 1200, descripcion: "Mouse gamer inhalambrico", cantidad: 1 },
+    { id: 10, img: "../imagenes/hph.jpg", nombre: "Audifonos negros", precio: 4500, descripcion: "Audifonos profesionales con supresión de ruido exterior", cantidad: 1 },
+    { id: 11, img: "../imagenes/carro.jpg", nombre: "Carrito", precio: 3500, descripcion: "El vehiculo que siepre deseo pero en miniatura o no? ", cantidad: 1 },
+    { id: 12, img: "../imagenes/control.jpg", nombre: "Control gamer", precio: 1200, descripcion: "Control de PS4 con diseño personalizado con temática de zombies", cantidad: 1 },
+];
+//----------------------------------------------------------------------------------------------------
 let carritoCompras = JSON.parse(localStorage.getItem('carrito')) || [];
+
 
 //Contador de Items en el carrito
 const AgregarContador = () => {
@@ -48,11 +63,13 @@ const mostrarCarrito = () => {
         div.innerHTML =
             `
         <img class="imagenbote" src="${servicio.img}" alt="imagen de ${servicio.nombre}">
+        <div class="nomprecio">
         <p>${servicio.nombre}</p>
         <p>$${servicio.precio} MXN</p>
         <p>Cant: ${servicio.cantidad}</p>
-        <p>Total:${servicio.cantidad * servicio.precio}</p>
-        <button id="cant${servicio.id}">Mas</button>
+        </div>
+        <p>Total: ${servicio.cantidad * servicio.precio}</p>
+        <img id="cant${servicio.id}" class="botonAgregarExtra" src="imagenes/mas.png" alt="imagen de agregar mas productos">
         `
         contenedorCarritoCA.appendChild(div);
         let eliminar = document.createElement("div");
@@ -80,6 +97,7 @@ const mostrarCarrito = () => {
     }
 
 }
+
 //-------Boton de comprar---------
 
 function comprar() {
@@ -94,21 +112,6 @@ function comprar() {
     contenedorCarritoCA.innerHTML = '';
 
 }
-//---------------------Productos------------------------------------------------
-const seviciosDesarrollador = [
-    { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial", cantidad: 1 },
-    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo", cantidad: 1 },
-    { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Audifonos recomendados por nuestros patrocinadores", cantidad: 1 },
-    { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones con distintas caracteristicas segun sus necesidades", cantidad: 1 },
-    { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclados recomendados por nuestros patrocinadores", cantidad: 1 },
-    { id: 6, img: "../imagenes/placa.jpg", nombre: "PLaca PCB ", precio: 500, descripcion: "Placa personalizada segun requiera, el costo aumenta segun los componentes", cantidad: 1 },
-    { id: 7, img: "../imagenes/cpu3.jpg", nombre: "cpu black", precio: 5200, descripcion: "CPU gamer con tarjeta de video", cantidad: 1 },
-    { id: 8, img: "../imagenes/luces.jpg", nombre: "Tira de leds", precio: 500, descripcion: "Tira de leds rgb con un largo de 10m", cantidad: 1 },
-    { id: 9, img: "../imagenes/mouse.jpg", nombre: "Mouse gamer", precio: 1200, descripcion: "Mouse gamer inhalambrico", cantidad: 1 },
-    { id: 10, img: "../imagenes/hph.jpg", nombre: "Audifonos negros", precio: 4500, descripcion: "Audifonos profesionales con supresión de ruido exterior", cantidad: 1 },
-    { id: 11, img: "../imagenes/carro.jpg", nombre: "Carrito", precio: 3500, descripcion: "El vehiculo que siepre deseo pero en miniatura o no? ", cantidad: 1 },
-    { id: 12, img: "../imagenes/control.jpg", nombre: "Control gamer", precio: 1200, descripcion: "Control de PS4 con diseño personalizado con temática de zombies", cantidad: 1 },
-];
 
 //---------------Alerta de agregado-------------------------------------------
 const alertContainer = document.getElementById("alert");
@@ -138,7 +141,6 @@ const agregarAlcarrito = (servicioSeleccionado, carrito) => {
     showAlert();
 }
 
-
 const eliminarProducto = (servicioSeleccionado, carrito) => {
     const BuscarID = carritoCompras.find((elmeento) => elmeento.id === servicioSeleccionado);
     console.log(servicioSeleccionado);
@@ -156,6 +158,7 @@ const eliminarProducto = (servicioSeleccionado, carrito) => {
     });
     mostrarCarrito();
 }
+
 
 
 
@@ -207,7 +210,7 @@ entrarRegistro.addEventListener('click', () => {
                         } else {
                             swal('Registro exitoso');
                             setTimeout(window.location = "index.html", 6000);
-                            
+
                         }
                     });
             }

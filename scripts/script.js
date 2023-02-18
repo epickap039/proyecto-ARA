@@ -77,7 +77,7 @@ const mostrarCarrito = () => {
         <div class="nomprecio">
         <p>${servicio.nombre}</p>
         <p>$${servicio.precio} MXN</p>
-        <p>Cant: ${servicio.cantidad}</p>
+        <p class="letrN">Cant: ${servicio.cantidad}</p>
         </div>
         <p>Total: ${servicio.cantidad * servicio.precio}</p>
         <img id="cant${servicio.id}" class="botonAgregarExtra" src="imagenes/mas.png" alt="imagen de agregar mas productos">

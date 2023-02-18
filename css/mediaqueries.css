@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fuentes/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MiFuente2";
+  src: url("../fuentes/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 @media only screen and (max-width: 550px) {
   header {
     padding: 25px;
@@ -52,6 +64,9 @@
   }
   nav ul li {
     align-items: end;
+  }
+  nav ul li a {
+    transition: none;
   }
   .offcanvas.offcanvas-end {
     width: 350px;

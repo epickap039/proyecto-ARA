@@ -1,8 +1,16 @@
 @import "variables";
 @import "mixin";
+
 @font-face {
     font-family: 'MiFuente';
     src: url('../fuentes/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiFuente2';
+    src: url('../fuentes/Poppins/Poppins-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -32,13 +40,14 @@ header {
     .logo {
         display: flex;
         align-items: center;
+        padding-left: 20px;
 
         &:hover {
             transform: scale(1.1);
         }
 
         a {
-
+            font-family: 'MiFuente2', sans-serif;
             color: $blancobeishe;
             text-decoration: none;
             font-size: $letragrande;
@@ -63,7 +72,7 @@ header {
 
 nav {
     display: flex;
-
+    padding-right: 20px;
 
     ul {
         list-style: none;
@@ -161,7 +170,7 @@ nav {
     }
 }
 
-.nomprecio{
+.nomprecio {
     flex-grow: 3;
     display: flex;
     flex-wrap: wrap;
@@ -180,11 +189,14 @@ nav {
     height: 26px;
 }
 
-.botonAgregarExtra{
+.botonAgregarExtra {
     width: 23px;
     height: 23px;
 }
 
+.letrN {
+    font-family: 'MiFuente2', sans-serif;
+}
 
 .search {
     position: relative;
@@ -281,4 +293,3 @@ nav {
     width: auto;
     cursor: pointer;
 }
-

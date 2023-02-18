@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "MiFuente2";
+  src: url("../fuentes/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -27,11 +33,13 @@ header {
 header .logo {
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 header .logo:hover {
   transform: scale(1.1);
 }
 header .logo a {
+  font-family: "MiFuente2", sans-serif;
   color: #EEEEEE;
   text-decoration: none;
   font-size: 2em;
@@ -49,6 +57,7 @@ header .logo img {
 
 nav {
   display: flex;
+  padding-right: 20px;
 }
 nav ul {
   list-style: none;
@@ -157,6 +166,10 @@ nav ul li div {
 .botonAgregarExtra {
   width: 23px;
   height: 23px;
+}
+
+.letrN {
+  font-family: "MiFuente2", sans-serif;
 }
 
 .search {
