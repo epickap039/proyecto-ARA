@@ -29,7 +29,7 @@
 
     @include itemcentrados;
 
-    h1 {
+    h2 {
         padding: 0%;
         // position: relative;
         color: $blancobeishe;
@@ -48,28 +48,24 @@
     flex-wrap: wrap;
     padding-left: 40px;
     padding-right: 40px;
-
-    p {
-        color: $blancobeishe;
-        padding: 10px;
-        font-size: $letramediana;
-        margin-bottom: 0%;
-    }
+    justify-content: flex-end;
 
     div {
         display: flex;
         justify-content: flex-end;
         gap: 20px;
+        align-items: center;
 
         button {
+            padding: 18px;
             background: none;
-            padding: 3px;
             height: fit-content;
             border: none;
             color: $blancobeishe;
         }
 
         select {
+            // padding: 10px;
             display: flex;
             width: fit-content;
             height: fit-content;
@@ -201,7 +197,8 @@
         height: 200px;
         object-fit: cover;
     }
-    h2{
+
+    h2 {
         padding-bottom: 0;
         padding: 20px;
     }
@@ -238,4 +235,3 @@
     font-size: 18px;
     cursor: pointer;
 }
-

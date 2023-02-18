@@ -47,16 +47,18 @@ header {
         }
 
         a {
-            font-family: 'MiFuente2', sans-serif;
-            color: $blancobeishe;
             text-decoration: none;
-            font-size: $letragrande;
             transition: all 0.3s;
             flex-grow: 3;
             list-style: none;
 
             &:hover {
                 color: $azulcian;
+            }
+            h1 {
+                font-family: 'MiFuente2', sans-serif;
+                color: $blancobeishe;
+                font-size: $letragrande;
             }
         }
 

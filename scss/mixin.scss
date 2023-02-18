@@ -1,9 +1,9 @@
-@mixin items-content{
+@mixin items-content {
     justify-content: space-between;
     align-items: center;
 }
 
-@mixin itemscards{
+@mixin itemscards {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 15% 70% 15%;
@@ -12,9 +12,10 @@
     min-width: 300px;
     gap: 1rem;
     background-color: #00ADB5;
-    padding: 2rem; 
+    padding: 2rem;
 }
-@mixin itemcentrados{
+
+@mixin itemcentrados {
     justify-content: center;
     align-items: center;
     height: auto;

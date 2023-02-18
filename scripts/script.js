@@ -35,12 +35,12 @@ const agregarLocalstorage = (clave, valor) => {
 
 //---------------------Productos------------------------------------------------
 const seviciosDesarrollador = [
-    { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot con 4 grados de libertad listo para uso personal/industrial", cantidad: 1 },
-    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds", precio: 500, descripcion: "Proyectos complejos o para uso personal autonomo", cantidad: 1 },
-    { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Audifonos recomendados por nuestros patrocinadores", cantidad: 1 },
-    { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones con distintas caracteristicas segun sus necesidades", cantidad: 1 },
-    { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclados recomendados por nuestros patrocinadores", cantidad: 1 },
-    { id: 6, img: "../imagenes/placa.jpg", nombre: "PLaca PCB ", precio: 500, descripcion: "Placa personalizada segun requiera, el costo aumenta segun los componentes", cantidad: 1 },
+    { id: 1, img: "../imagenes/brazo robot.jfif", nombre: "Brazo robot", precio: 20000, descripcion: "Brazo robot listo para uso personal/industrial", cantidad: 1 },
+    { id: 2, img: "../imagenes/leds.jpg", nombre: "Leds", precio: 500, descripcion: "Proyectos complejos o para uso personal", cantidad: 1 },
+    { id: 3, img: "../imagenes/audifonos.jpg", nombre: "Audifonos ", precio: 2500, descripcion: "Alta calidad de Audio y sonido 3D", cantidad: 1 },
+    { id: 4, img: "../imagenes/im5.png", nombre: "Drones", precio: 6500, descripcion: "Drones perzonalicacion completa", cantidad: 1 },
+    { id: 5, img: "../imagenes/teclado.jpg", nombre: "Teclados ", precio: 1500, descripcion: "Teclado con retroiluminacion 7 colores", cantidad: 1 },
+    { id: 6, img: "../imagenes/placa.jpg", nombre: "PLaca PCB ", precio: 500, descripcion: "Placa personalizada el costo aumenta segun los componentes", cantidad: 1 },
     { id: 7, img: "../imagenes/cpu3.jpg", nombre: "cpu black", precio: 5200, descripcion: "CPU gamer con tarjeta de video", cantidad: 1 },
     { id: 8, img: "../imagenes/luces.jpg", nombre: "Tira de leds", precio: 500, descripcion: "Tira de leds rgb con un largo de 10m", cantidad: 1 },
     { id: 9, img: "../imagenes/mouse.jpg", nombre: "Mouse gamer", precio: 1200, descripcion: "Mouse gamer inhalambrico", cantidad: 1 },
@@ -112,17 +112,20 @@ const mostrarCarrito = () => {
 //-------Boton de comprar---------
 
 function comprar() {
+    carritoCompras.map((prod) => {
+        prod.cantidad = 1;
+        })
+        
+        swal("gracias por tu compra", "Seguir Comprando", "success");
+        carritoCompras = []
+        localStorage.removeItem('carrito');
+        console.log(carritoCompras);
+        mostrarCarrito();
+        AgregarContador();
+        contenedorCarritoCA.innerHTML = '';
+    };
 
-    swal("gracias por tu compra", "Seguir Comprando", "success");
-    // alert('gracias por tu compra')
-    localStorage.removeItem('carrito');
-    carritoCompras = []
-    console.log(carritoCompras);
-    mostrarCarrito();
-    AgregarContador();
-    contenedorCarritoCA.innerHTML = '';
 
-}
 
 //agregar al carrito en index
 
