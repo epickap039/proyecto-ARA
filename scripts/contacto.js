@@ -138,14 +138,26 @@ const agregarAlcarrito = (servicioSeleccionado, carrito) => {
     showAlert();
 }
 
+
 const eliminarProducto = (servicioSeleccionado, carrito) => {
     const BuscarID = carritoCompras.find((elmeento) => elmeento.id === servicioSeleccionado);
-    carritoCompras = carritoCompras.filter((carritoID) => {
-        return carritoID !== BuscarID;
-    })
-    carrito.push(carritoCompras);
+    console.log(servicioSeleccionado);
+    carritoCompras.map((prod) => {
+        if (servicioSeleccionado === prod.id) {
+            if (prod.cantidad > 1) {
+                prod.cantidad--;
+            } else {
+                carritoCompras = carritoCompras.filter((carritoID) => {
+                    return carritoID !== BuscarID;
+                })
+                carrito.push(carritoCompras);
+            }
+        }
+    });
     mostrarCarrito();
 }
+
+
 
 //===================================formulario==================================================================================
 

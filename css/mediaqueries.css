@@ -2,34 +2,41 @@
   header {
     padding: 25px;
   }
-  .abrirmenu, .Cerrarmenu {
+  .abrirmenu {
     display: block;
     border: none;
   }
-  .abrirmenu img, .Cerrarmenu img {
-    width: 40px;
-    height: 40px;
+  .abrirmenu img {
+    width: 35px;
+    height: 35px;
     background-color: #222831;
   }
-  nav {
-    opacity: 0;
-    visibility: hidden;
+  .Cerrarmenu {
+    display: block;
+    border: none;
+  }
+  .Cerrarmenu img {
+    width: 25px;
+    height: 25px;
+    background-color: #222831;
   }
   .visible {
     opacity: 1;
     visibility: visible;
   }
   nav {
-    position: absolute;
+    opacity: 100%;
+    z-index: 2;
+    visibility: hidden;
+    position: fixed;
     top: 0;
     right: 0;
     flex-direction: column;
-    padding: 1rem;
     background-color: #222831;
     bottom: 0%;
     gap: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    align-items: end;
+    align-items: center;
   }
   nav button {
     background-color: #222831;
@@ -38,10 +45,25 @@
   }
   nav ul {
     flex-direction: column;
-    padding: 15px;
+    padding: 20px;
+    align-items: center;
+    padding-bottom: 0;
+    gap: 2rem;
   }
   nav ul li {
     align-items: end;
+  }
+  .offcanvas.offcanvas-end {
+    width: 350px;
+  }
+  #headerOffcanvas {
+    width: 350px;
+  }
+  .itemcarrito {
+    width: 320px;
+  }
+  .itemcarrito .imagenbote {
+    display: none;
   }
   .slogan {
     padding: 100px;

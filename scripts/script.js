@@ -167,11 +167,8 @@ const agregarAlcarrito = (servicioSeleccionado, carrito) => {
 
 const eliminarProducto = (servicioSeleccionado, carrito) => {
     const BuscarID = carritoCompras.find((elmeento) => elmeento.id === servicioSeleccionado);
-
     console.log(servicioSeleccionado);
     carritoCompras.map((prod) => {
-        // console.log(BuscarID+' '+prod.id);
-
         if (servicioSeleccionado === prod.id) {
             if (prod.cantidad > 1) {
                 prod.cantidad--;
