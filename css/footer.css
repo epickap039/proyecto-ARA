@@ -1,22 +1,64 @@
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fuentes/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "MiFuente", sans-serif;
+  margin-bottom: 0%;
+}
+
 footer {
-  background-color: #333;
+  background-color: #393E46;
   color: #fff;
   padding: 20px;
+  border-top: solid 15px #222831;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
 }
 
+.payment-methods {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.payment-methods p {
+  margin-bottom: 0;
+}
 .payment-methods img {
   width: 50px;
   margin-right: 10px;
 }
 
+.social-media {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.social-media p {
+  margin-bottom: 0;
+}
 .social-media a {
   color: #fff;
+  margin-right: 10px;
+}
+.social-media a img {
+  width: 40px;
   margin-right: 10px;
 }
 

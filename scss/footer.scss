@@ -1,25 +1,73 @@
 @import "variables";
 
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../fuentes/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MiFuente', sans-serif;
+    margin-bottom: 0%;
+
+}
+
 footer {
-    background-color: #333;
+    background-color: $negromate;
     color: #fff;
     padding: 20px;
+    border-top: solid 15px $negro;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
 }
 
-.payment-methods img {
-    width: 50px;
-    margin-right: 10px;
+.payment-methods {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    p{
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 50px;
+        margin-right: 10px;
+    }
 }
 
-.social-media a {
-    color: #fff;
-    margin-right: 10px;
+.social-media {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    p{
+        margin-bottom: 0;
+    }
+    a {
+        color: #fff;
+        margin-right: 10px;
+
+        img {
+            width: 40px;
+            margin-right: 10px;
+
+        }
+    }
 }
 
 .social-media a:hover {
