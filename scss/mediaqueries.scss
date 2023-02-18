@@ -66,6 +66,13 @@
         }
 
     }
+    .productosBarra{
+        gap: 0;
+        justify-content: center;
+        div{
+            padding: 20px;
+        }
+    }
     .flexbienvenida{
         flex-direction: column;
         p{
@@ -77,7 +84,7 @@
     }
     .slider {
         width: max;
-        height: 160px;
+        height: 200px;
 
     }
     footer{

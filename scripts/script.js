@@ -48,7 +48,6 @@ const seviciosDesarrollador = [
     { id: 11, img: "../imagenes/carro.jpg", nombre: "Carrito", precio: 3500, descripcion: "El vehiculo que siepre deseo pero en miniatura o no? ", cantidad: 1 },
     { id: 12, img: "../imagenes/control.jpg", nombre: "Control gamer", precio: 1200, descripcion: "Control de PS4 con diseño personalizado con temática de zombies", cantidad: 1 },
 ];
-
 //----------------------------------------------------------------------------------------------------
 let carritoCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -144,7 +143,6 @@ seviciosDesarrollador.forEach(servicio => {
     const botonAgregarCarrito = document.getElementById(`producto${servicio.id}`)
     botonAgregarCarrito.addEventListener("click", () => {
         agregarAlcarrito(servicio.id, carritoCompras);
-        console.log("este es el de agregar al carrito " + servicio.id)
         AgregarContador();
         mostrarCarrito();
 
@@ -169,12 +167,25 @@ const agregarAlcarrito = (servicioSeleccionado, carrito) => {
 
 const eliminarProducto = (servicioSeleccionado, carrito) => {
     const BuscarID = carritoCompras.find((elmeento) => elmeento.id === servicioSeleccionado);
-    carritoCompras = carritoCompras.filter((carritoID) => {
-        return carritoID !== BuscarID;
-    })
-    carrito.push(carritoCompras);
+
+    console.log(servicioSeleccionado);
+    carritoCompras.map((prod) => {
+        // console.log(BuscarID+' '+prod.id);
+
+        if (servicioSeleccionado === prod.id) {
+            if (prod.cantidad > 1) {
+                prod.cantidad--;
+            } else {
+                carritoCompras = carritoCompras.filter((carritoID) => {
+                    return carritoID !== BuscarID;
+                })
+                carrito.push(carritoCompras);
+            }
+        }
+    });
     mostrarCarrito();
 }
+
 
 window.addEventListener('load', () => {
     mostrarCarrito();

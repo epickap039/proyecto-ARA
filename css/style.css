@@ -500,7 +500,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   padding: 30px;
 }
 
@@ -597,6 +597,13 @@ footer {
     width: 200px;
     height: auto;
   }
+  .productosBarra {
+    gap: 0;
+    justify-content: center;
+  }
+  .productosBarra div {
+    padding: 20px;
+  }
   .flexbienvenida {
     flex-direction: column;
   }
@@ -608,7 +615,7 @@ footer {
   }
   .slider {
     width: max;
-    height: 160px;
+    height: 200px;
   }
   footer {
     padding: 0%;

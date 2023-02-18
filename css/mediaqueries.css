@@ -53,6 +53,13 @@
     width: 200px;
     height: auto;
   }
+  .productosBarra {
+    gap: 0;
+    justify-content: center;
+  }
+  .productosBarra div {
+    padding: 20px;
+  }
   .flexbienvenida {
     flex-direction: column;
   }
@@ -64,7 +71,7 @@
   }
   .slider {
     width: max;
-    height: 160px;
+    height: 200px;
   }
   footer {
     padding: 0%;
