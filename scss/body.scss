@@ -150,7 +150,6 @@
     display: flex;
     flex-basis: auto;
     gap: 0;
-
     h2 {
         @include itemcentrados;
         padding: 80px;
@@ -165,7 +164,6 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
-
         p {
             display: flex;
             margin: 0;

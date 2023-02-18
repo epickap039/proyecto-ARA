@@ -43,18 +43,21 @@ header .logo a {
   transition: all 0.3s;
   flex-grow: 3;
   list-style: none;
+  color: #EEEEEE;
+  margin-bottom: 0;
 }
 header .logo a:hover {
   color: #00ADB5;
 }
-header .logo a h1 {
-  font-family: "MiFuente2", sans-serif;
-  color: #EEEEEE;
-  font-size: 2em;
-}
 header .logo img {
   width: 60px;
   height: 60px;
+}
+
+h1 {
+  font-family: "MiFuente2", "MiFuente1", sans-serif;
+  font-size: 2em;
+  margin-bottom: 0;
 }
 
 nav {
